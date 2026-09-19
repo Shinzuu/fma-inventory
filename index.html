@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMA Chapter 6 — Inventories | CT study guide</title>
+<meta name="description" content="Financial and Managerial Accounting, Chapter 6 (Inventories) class-test guide: classifying inventory, ownership rules, FIFO, LIFO and average-cost under periodic and perpetual systems, inventory errors, presentation, worked problems and self-tests.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='84'>%F0%9F%93%A6</text></svg>">
+<style>
+:root{
+  --bg:#f6f7fb; --panel:#ffffff; --panel2:#eef1f7; --ink:#18202c; --muted:#5b6574; --line:#dde2ec;
+  --accent:#2463eb; --accent-ink:#ffffff; --green:#0d8a63; --amber:#a86400; --red:#c0392b; --violet:#6d3fd6;
+  --code-bg:#0f1420; --code-ink:#dfe6f2; --code-line:#1c2433;
+  --shadow:0 4px 18px rgba(20,30,60,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1117; --panel:#161b24; --panel2:#1d2330; --ink:#e6e9ef; --muted:#9aa4b4; --line:#2a3140;
+    --accent:#6ea2ff; --accent-ink:#0b1020; --green:#3fcf9a; --amber:#f2b35a; --red:#ff8577; --violet:#b69cff;
+    --code-bg:#0a0d13; --code-ink:#dfe6f2; --code-line:#161c27;
+    --shadow:0 6px 22px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1117; --panel:#161b24; --panel2:#1d2330; --ink:#e6e9ef; --muted:#9aa4b4; --line:#2a3140;
+  --accent:#6ea2ff; --accent-ink:#0b1020; --green:#3fcf9a; --amber:#f2b35a; --red:#ff8577; --violet:#b69cff;
+  --code-bg:#0a0d13; --code-ink:#dfe6f2; --code-line:#161c27;
+  --shadow:0 6px 22px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:60}
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .row{max-width:1100px;margin:0 auto;display:flex;gap:10px;align-items:center;padding:8px 16px}
+.brand{font-weight:800;font-size:14px;white-space:nowrap}
+.nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.pin.blank{visibility:hidden}
+.nav a{font-size:12.5px;color:var(--muted);text-decoration:none;padding:5px 9px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.nav a:hover,.nav a.on{color:var(--accent);background:var(--panel2);border-color:var(--line)}
+.btn{font:inherit;font-size:13px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:6px 11px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:0 16px 80px}
+.hero{margin:22px 0 6px;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}
+.hero h1{margin:0 0 8px;font-size:clamp(22px,4vw,32px);line-height:1.2}
+.hero p{margin:8px 0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--line)}
+section{margin:44px 0;scroll-margin-top:60px}
+h2{font-size:24px;line-height:1.25;margin:0 0 6px}
+h2 small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h3{font-size:18px;margin:26px 0 6px}
+h4{font-size:15.5px;margin:18px 0 4px}
+p{margin:10px 0} ul,ol{padding-left:22px} li{margin:5px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--panel2);padding:1px 5px;border-radius:5px}
+.box{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);border-radius:12px;padding:12px 16px;margin:14px 0;box-shadow:var(--shadow)}
+.box.say{border-left-color:var(--green)} .box.warn{border-left-color:var(--amber)} .box.trap{border-left-color:var(--red)} .box.deep{border-left-color:var(--violet)}
+.box > b:first-child{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.box.say > b:first-child{color:var(--green)} .box.warn > b:first-child{color:var(--amber)} .box.trap > b:first-child{color:var(--red)} .box.deep > b:first-child{color:var(--violet)}
+.tablewrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:7px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--panel2);font-size:13px}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+figure.code{margin:14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
+figure.code figcaption{display:flex;justify-content:space-between;gap:8px;padding:7px 12px;background:var(--panel2);font-size:13px}
+.file{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:600;overflow-wrap:anywhere}
+.lang{color:var(--muted);text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+pre{margin:0;overflow-x:auto;background:var(--code-bg);color:var(--code-ink)}
+pre code{display:block;background:none;padding:10px 0;font-size:13.2px;line-height:1.6;min-width:max-content}
+pre code > span{display:block;padding:0 14px 0 0;white-space:pre}
+pre code > span.hl{background:var(--code-line)}
+.ln{display:inline-block;width:3.2em;padding-right:1em;text-align:right;color:#5c6780;user-select:none}
+.pin{display:inline-block;width:1.5em;height:1.35em;line-height:1.35em;margin:0 .5em 0 -.3em;border-radius:999px;background:#f2b35a;color:#1a1204;font-size:11px;font-weight:800;text-align:center;user-select:none;vertical-align:1px}
+.c-kw{color:#7fb2ff}.c-type{color:#6fd6c3}.c-str{color:#f6c177}.c-num{color:#f5a3c7}.c-com{color:#7d8799;font-style:italic}.c-pos{color:#ffb86b;font-weight:700}.c-ann{color:#c3a6ff}
+ol.notes{margin:0;padding:10px 16px 12px 40px;font-size:14.5px;border-top:1px solid var(--line)}
+ol.notes li{margin:7px 0}
+.lnref{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-right:4px;white-space:nowrap}
+pre.term{border-radius:12px;margin:12px 0;border:1px solid var(--line)}
+pre.term code{padding:10px 14px}
+pre.term code > span{padding:0}
+.prompt{color:#3fcf9a;user-select:none}
+.figwrap{margin:14px 0;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto;box-shadow:var(--shadow)}
+.figwrap svg{display:block;width:100%;height:auto;min-width:520px}
+.figwrap .cap{font-size:13px;color:var(--muted);margin-top:8px}
+svg .bx{fill:var(--panel2);stroke:var(--line);stroke-width:1.5}
+svg .bxa{fill:color-mix(in srgb,var(--accent) 14%,var(--panel));stroke:var(--accent);stroke-width:1.5}
+svg .bxg{fill:color-mix(in srgb,var(--green) 14%,var(--panel));stroke:var(--green);stroke-width:1.5}
+svg .bxv{fill:color-mix(in srgb,var(--violet) 14%,var(--panel));stroke:var(--violet);stroke-width:1.5}
+svg .bxw{fill:color-mix(in srgb,var(--amber) 14%,var(--panel));stroke:var(--amber);stroke-width:1.5}
+svg text{fill:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px}
+svg .t-s{font-size:11.5px;fill:var(--muted)} svg .t-b{font-weight:700} svg .t-m{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+svg .ar{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
+svg .ch-title{font-weight:700;font-size:14px} svg .ch-lbl{font-size:12.5px} svg .ch-val{font-size:12px;fill:var(--muted)}
+svg .ch-bar{fill:var(--accent)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+.steps > li{counter-increment:s;position:relative;padding:10px 14px 10px 52px;margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.steps > li::before{content:counter(s);position:absolute;left:14px;top:10px;width:26px;height:26px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:13px;display:grid;place-items:center}
+.steps > li > b:first-child{display:block}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:12px 0}
+.stat{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px 14px}
+.stat .v{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat .k{font-size:13px;color:var(--muted)}
+details.qa{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin:8px 0}
+details.qa > summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none;display:flex;gap:8px;align-items:flex-start}
+details.qa > summary::-webkit-details-marker{display:none}
+details.qa > summary::before{content:"+";font-weight:800;color:var(--accent);width:1em;flex:none}
+details.qa[open] > summary::before{content:"−"}
+details.qa .a{padding:0 16px 12px 36px}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;margin-left:auto;flex:none}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.filters .btn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.quiz .q{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px 14px;margin:10px 0}
+.quiz .q p{margin:0 0 8px;font-weight:600}
+.opts{display:grid;gap:6px}
+.opt{font:inherit;text-align:left;font-size:14.5px;padding:8px 11px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.right{border-color:var(--green);background:color-mix(in srgb,var(--green) 16%,var(--panel))}
+.opt.wrong{border-color:var(--red);background:color-mix(in srgb,var(--red) 14%,var(--panel))}
+.why{display:none;font-size:14px;color:var(--muted);margin-top:8px}
+.q.done .why{display:block}
+.score{position:sticky;top:52px;z-index:5;display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:700;font-size:14px}
+.blank input{font:inherit;font-size:14.5px;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);width:min(220px,100%)}
+.blank input.right{border-color:var(--green)} .blank input.wrong{border-color:var(--red)}
+.blank .ans{display:none;color:var(--green);font-weight:600;margin-left:6px}
+.blank.show .ans{display:inline}
+.drill .task{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.drill .cmd{display:none;margin-top:8px}
+.drill .q.show .cmd{display:block}
+
+.sched{width:100%;font-size:14px;border-collapse:collapse}
+.sched th{background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.sched td,.sched th{border-bottom:1px solid var(--line);padding:6px 9px;vertical-align:top}
+.sched td.n,.sched th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sched tr.tot td{font-weight:800;border-top:1px solid var(--ink);border-bottom:3px double var(--line)}
+.sched tr.sub td{border-top:1px solid var(--line)}
+.kbd{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.formula{font-size:16px;text-align:center;padding:12px;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel2);font-weight:600}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:50px;padding-top:14px}
+@media (max-width:560px){ .brand{display:none} .top .row{padding:6px 10px} main{padding:0 16px 60px} .hero{padding:18px} }
+@media print{ .top,#progress,.filters,.btn{display:none!important} details.qa{break-inside:avoid} section{break-inside:auto} body{background:#fff;color:#000} }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="top"><div class="row">
+  <span class="brand">📦 FMA Ch. 6</span>
+  <nav class="nav" id="nav"><a href="#start">Start</a><a href="#lo1">LO 1 Classify</a><a href="#lo2">LO 2 Cost flow</a><a href="#errors">LO 3 Errors</a><a href="#presentation">LO 4 Presentation</a><a href="#perpetual">Appendix 6A</a><a href="#problems">Worked problems</a><a href="#qa">Q&amp;A</a><a href="#quiz">Quiz</a><a href="#checklist">Checklist</a></nav>
+  <button class="btn" id="theme" title="Toggle light / dark">Theme</button>
+</div></div>
+<main>
+
+<header class="hero">
+  <h1>Chapter 6 — Inventories</h1>
+  <p>Everything the class test can ask from the Chapter 6 deck: classifying inventory, who owns goods in
+  transit, the four costing methods, what each one does to profit and tax, inventory errors, presentation,
+  and the perpetual versions in Appendix 6A. Ends with the two assignment problems worked in full, plus
+  self-tests.</p>
+  <div class="chips">
+    <span class="chip">LO 1–4 + Appendix 6A</span>
+    <span class="chip">FIFO · LIFO · Average-cost</span>
+    <span class="chip">Periodic &amp; perpetual</span>
+    <span class="chip">P6.5A and P6.8A solved</span>
+  </div>
+</header>
+
+<section id="start">
+<h2><small>Start here</small>The five things the whole chapter hangs on</h2>
+<div class="formula">Beginning inventory + Purchases = Cost of goods available for sale<br>
+Cost of goods available for sale − Ending inventory = <b>Cost of goods sold</b></div>
+<p>Every costing method in this chapter splits the same pot of money — the cost of goods available for sale —
+between what is still on the shelf (ending inventory, an asset) and what was sold (cost of goods sold, an
+expense). Give more to one and you give less to the other.</p>
+<ol class="steps">
+<li><b>Classify it</b>A merchandiser has one inventory account. A manufacturer has three: raw materials, work in
+process, finished goods. All of them are <b>current assets</b>.</li>
+<li><b>Count it and decide who owns it</b>Goods in transit belong to whoever has legal title: FOB shipping point
+means the buyer owns them the moment the carrier takes them; FOB destination means the seller owns them until
+delivery. Consigned goods belong to the consignor, never to the shop holding them.</li>
+<li><b>Cost it</b>Specific identification, FIFO, LIFO or average-cost. The assumption does <b>not</b> have to match
+the physical flow of the goods.</li>
+<li><b>Know the effects</b>When prices are rising: FIFO gives the highest ending inventory and net income; LIFO
+gives the lowest net income and therefore the lowest income taxes; average-cost sits between them.</li>
+<li><b>Watch for errors</b>An ending inventory error hits two years in opposite directions, and after two years
+the total net income is correct again.</li>
+</ol>
+<div class="box say"><b>If you are asked to define cost</b>Inventory is recorded at <b>cost</b>, and cost includes
+<b>all expenditures necessary to acquire the goods and put them in a condition ready for sale</b>.</div>
+<h3>Numbers from the deck worth memorising</h3>
+<div class="grid2">
+  <div class="stat"><div class="v">3</div><div class="k">manufacturer classifications: raw materials, work in process, finished goods</div></div>
+  <div class="stat"><div class="v">4</div><div class="k">costing methods: specific identification, FIFO, LIFO, average-cost</div></div>
+  <div class="stat"><div class="v">$195,000</div><div class="k">Hasbeen Co. corrected inventory (200,000 − 15,000 + 10,000)</div></div>
+  <div class="stat"><div class="v">$12,000</div><div class="k">Houston Electronics: cost of 1,000 units available for sale</div></div>
+  <div class="stat"><div class="v">2</div><div class="k">years an inventory error affects, and they cancel out</div></div>
+  <div class="stat"><div class="v">30%</div><div class="k">tax rate in the comparative income statements</div></div>
+</div>
+</section><section id="lo1">
+<h2><small>LO 1</small>Classifying and determining inventory</h2>
+<h3>Classification</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Type of company</th><th class="">Inventory accounts</th><th class="">Shown as</th></tr></thead><tbody><tr class=""><td class="">Merchandising company</td><td class="">One account: <b>Inventory</b> (goods bought ready for resale)</td><td class="">Current asset</td></tr><tr class=""><td class="">Manufacturing company</td><td class="">Three: <b>raw materials</b>, <b>work in process</b>, <b>finished goods</b></td><td class="">Current assets</td></tr></tbody></table></div>
+<div class="box"><b>Helpful hint from the deck</b>Whatever the classification, companies report <b>all</b>
+inventories under current assets on the balance sheet.</div>
+<h3>Why a physical count is taken</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">System</th><th class="">Reason for taking a physical inventory</th></tr></thead><tbody><tr class=""><td class="">Perpetual</td><td class="">check the accuracy of the inventory records; measure inventory lost to waste, shoplifting or employee theft</td></tr><tr class=""><td class="">Periodic</td><td class="">determine the inventory on hand; determine the cost of goods sold for the period</td></tr></tbody></table></div>
+<p>Taking a physical inventory means <b>counting, weighing or measuring</b> each kind of inventory on hand.
+Companies usually do it when the business is closed or slow, and at the end of the accounting period.</p>
+<h3>Who owns the goods</h3>
+<div class="figwrap"><svg viewBox="0 0 820 190" role="img" aria-label="ownership of goods"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--muted)"/></marker></defs><rect x="20" y="20" width="360" height="70" rx="10" class="bxa"/><text x="200.0" y="43" text-anchor="middle" class="t-b">FOB SHIPPING POINT</text><text x="200.0" y="59" text-anchor="middle" class="t-s">ownership passes when the carrier</text><text x="200.0" y="75" text-anchor="middle" class="t-s">accepts the goods from the seller</text><rect x="20" y="105" width="360" height="70" rx="10" class="bxg"/><text x="200.0" y="128" text-anchor="middle" class="t-b">FOB DESTINATION</text><text x="200.0" y="144" text-anchor="middle" class="t-s">ownership stays with the seller</text><text x="200.0" y="160" text-anchor="middle" class="t-s">until the goods reach the buyer</text><path d="M385,55 L430,55" class="ar"/><path d="M385,140 L430,140" class="ar"/><rect x="435" y="20" width="170" height="70" rx="10" class="bx"/><text x="520.0" y="51" text-anchor="middle" class="t-b">BUYER</text><text x="520.0" y="67" text-anchor="middle" class="t-s">counts them</text><rect x="435" y="105" width="170" height="70" rx="10" class="bx"/><text x="520.0" y="136" text-anchor="middle" class="t-b">SELLER</text><text x="520.0" y="152" text-anchor="middle" class="t-s">counts them</text><rect x="625" y="55" width="175" height="85" rx="10" class="bxv"/><text x="712.5" y="78" text-anchor="middle" class="t-b">CONSIGNED GOODS</text><text x="712.5" y="94" text-anchor="middle" class="t-s">held to sell for a fee,</text><text x="712.5" y="110" text-anchor="middle" class="t-s">ownership never passes:</text><text x="712.5" y="126" text-anchor="middle" class="t-s">consignor still counts them</text></svg><div class="cap">Goods in transit go in the inventory of whoever holds legal title, and the terms of sale decide that.</div></div>
+<div class="box say"><b>DO IT! Hasbeen Company</b>Inventory counted at $200,000.
+(1) It <b>included</b> $15,000 of goods held on consignment for Falls Co. — those belong to Falls, so
+<b>deduct $15,000</b>. (2) It <b>omitted</b> $10,000 of purchased goods in transit, FOB shipping point — title has
+already passed to Hasbeen, so <b>add $10,000</b>. (3) It omitted goods it had sold, costing $12,000, in transit FOB
+shipping point — title passed to the customer, so leaving them out was <b>correct</b>.<br>
+Corrected inventory = $200,000 − $15,000 + $10,000 = <b>$195,000</b>.</div>
+<div class="box trap"><b>Exam trap</b>"Goods in transit should be included in the inventory of the buyer when …"
+The answer is <b>the terms of sale are FOB shipping point</b> (equivalently: when the public carrier accepts the
+goods from the seller).</div>
+</section><section id="lo2">
+<h2><small>LO 2</small>Cost flow methods</h2>
+<p>Inventory is accounted for at <b>cost</b>: all expenditures needed to acquire the goods and bring them to a
+condition ready for sale. Unit costs are then applied to quantities using one of four methods.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Method</th><th class="">What it assumes</th><th class="">Note from the deck</th></tr></thead><tbody><tr class=""><td class="">Specific identification</td><td class="">each item sold is costed at its own actual cost</td><td class="">an actual physical-flow method; <b>practice is relatively rare</b></td></tr><tr class=""><td class="">FIFO (first-in, first-out)</td><td class="">earliest costs go to cost of goods sold</td><td class="">often parallels the actual physical flow of goods</td></tr><tr class=""><td class="">LIFO (last-in, first-out)</td><td class="">latest costs go to cost of goods sold</td><td class="">seldom matches physical flow — exceptions are goods stored in piles, like coal or hay</td></tr><tr class=""><td class="">Average-cost</td><td class="">one weighted-average unit cost for everything</td><td class="">allocates the cost of goods available for sale on a weighted-average basis</td></tr></tbody></table></div>
+<div class="box trap"><b>Remember this sentence</b>Cost flow assumptions <b>do not need to be consistent with the
+physical movement of the goods</b>. Only specific identification tracks actual units.</div>
+<h3>Specific identification — the Crivitz example</h3>
+<p>Crivitz TV buys three identical 50-inch TVs for $700, $750 and $800, and sells two of them for $1,200 each.
+If the ones sold were the February 3 ($700) and May 22 ($800) sets, then cost of goods sold is
+<b>$1,500</b> and ending inventory is <b>$750</b>. Choose different sets and the profit changes — which is why the
+method is only allowed when units are genuinely identifiable.</p>
+<h3>The Houston Electronics data (the deck's running example)</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Explanation</th><th class="n">Units</th><th class="n">Unit cost</th><th class="n">Total cost</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class="">Beginning inventory</td><td class="n">100</td><td class="n">$10</td><td class="n">$ 1,000</td></tr><tr class=""><td class="">Apr. 15</td><td class="">Purchase</td><td class="n">200</td><td class="n">11</td><td class="n">2,200</td></tr><tr class=""><td class="">Aug. 24</td><td class="">Purchase</td><td class="n">300</td><td class="n">12</td><td class="n">3,600</td></tr><tr class=""><td class="">Nov. 27</td><td class="">Purchase</td><td class="n">400</td><td class="n">13</td><td class="n">5,200</td></tr><tr class="tot"><td class=""></td><td class=""><b>Total units available for sale</b></td><td class="n"><b>1,000</b></td><td class="n"></td><td class="n"><b>$12,000</b></td></tr><tr class=""><td class=""></td><td class="">Units in ending inventory</td><td class="n">450</td><td class="n"></td><td class="n"></td></tr><tr class=""><td class=""></td><td class="">Units sold</td><td class="n">550</td><td class="n"></td><td class="n"></td></tr></tbody></table></div>
+<h4>FIFO — cost the ending inventory with the <i>newest</i> costs</h4>
+<p>Mnemonic in the deck: <b>LISH — last in still here</b>.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Ending inventory (450 units)</th><th class="n"></th><th class="">Cost of goods sold</th><th class="n"></th></tr></thead><tbody><tr class=""><td class="">400 units @ $13 (Nov. 27)</td><td class="n">$5,200</td><td class="">Cost of goods available for sale</td><td class="n">$12,000</td></tr><tr class=""><td class="">50 units @ $12 (Aug. 24)</td><td class="n">600</td><td class="">Less: ending inventory</td><td class="n">5,800</td></tr><tr class="tot"><td class=""><b>Ending inventory</b></td><td class="n"><b>$5,800</b></td><td class=""><b>Cost of goods sold</b></td><td class="n"><b>$6,200</b></td></tr></tbody></table></div>
+<h4>LIFO — cost the ending inventory with the <i>oldest</i> costs</h4>
+<p>Mnemonic: <b>FISH — first in still here</b>.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Ending inventory (450 units)</th><th class="n"></th><th class="">Cost of goods sold</th><th class="n"></th></tr></thead><tbody><tr class=""><td class="">100 units @ $10 (Jan. 1)</td><td class="n">$1,000</td><td class="">Cost of goods available for sale</td><td class="n">$12,000</td></tr><tr class=""><td class="">200 units @ $11 (Apr. 15)</td><td class="n">2,200</td><td class="">Less: ending inventory</td><td class="n">5,000</td></tr><tr class=""><td class="">150 units @ $12 (Aug. 24)</td><td class="n">1,800</td><td class=""></td><td class="n"></td></tr><tr class="tot"><td class=""><b>Ending inventory</b></td><td class="n"><b>$5,000</b></td><td class=""><b>Cost of goods sold</b></td><td class="n"><b>$7,000</b></td></tr></tbody></table></div>
+<h4>Average-cost — one weighted-average unit cost</h4>
+<div class="formula">Weighted-average unit cost = Cost of goods available for sale ÷ Total units available for sale</div>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Step</th><th class="">Working</th><th class="n">Result</th></tr></thead><tbody><tr class=""><td class="">Weighted-average unit cost</td><td class="">$12,000 ÷ 1,000 units</td><td class="n">$12.00</td></tr><tr class=""><td class="">Ending inventory</td><td class="">450 units × $12.00</td><td class="n">$5,400</td></tr><tr class=""><td class="">Cost of goods sold</td><td class="">$12,000 − $5,400</td><td class="n">$6,600</td></tr></tbody></table></div>
+<div class="box warn"><b>Do not average the unit prices</b>The weighted average is not (10 + 11 + 12 + 13) ÷ 4 =
+$11.50. It is total cost ÷ total units = $12.00, because the purchases are different sizes.</div>
+<h3>Financial statement and tax effects</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class=""></th><th class="n">FIFO</th><th class="n">LIFO</th><th class="n">Average-cost</th></tr></thead><tbody><tr class=""><td class="">Sales revenue</td><td class="n">$18,500</td><td class="n">$18,500</td><td class="n">$18,500</td></tr><tr class=""><td class="">Beginning inventory</td><td class="n">1,000</td><td class="n">1,000</td><td class="n">1,000</td></tr><tr class=""><td class="">Purchases</td><td class="n">11,000</td><td class="n">11,000</td><td class="n">11,000</td></tr><tr class=""><td class="">Cost of goods available for sale</td><td class="n">12,000</td><td class="n">12,000</td><td class="n">12,000</td></tr><tr class=""><td class="">Ending inventory</td><td class="n"><b>5,800</b></td><td class="n"><b>5,000</b></td><td class="n"><b>5,400</b></td></tr><tr class=""><td class="">Cost of goods sold</td><td class="n">6,200</td><td class="n">7,000</td><td class="n">6,600</td></tr><tr class="sub"><td class="">Gross profit</td><td class="n">12,300</td><td class="n">11,500</td><td class="n">11,900</td></tr><tr class=""><td class="">Operating expenses</td><td class="n">9,000</td><td class="n">9,000</td><td class="n">9,000</td></tr><tr class=""><td class="">Income before income taxes</td><td class="n">3,300</td><td class="n">2,500</td><td class="n">2,900</td></tr><tr class=""><td class="">Income tax expense (30%)</td><td class="n">990</td><td class="n">750</td><td class="n">870</td></tr><tr class="tot"><td class=""><b>Net income</b></td><td class="n"><b>$2,310</b></td><td class="n"><b>$1,750</b></td><td class="n"><b>$2,030</b></td></tr></tbody></table></div>
+<p>Prices were rising in this example ($10 → $13), and that is the case every exam question uses.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Effect (period of rising prices)</th><th class="">FIFO</th><th class="">LIFO</th></tr></thead><tbody><tr class=""><td class="">Ending inventory on the balance sheet</td><td class="">highest — close to current cost</td><td class="">lowest — may be badly understated in current-cost terms</td></tr><tr class=""><td class="">Cost of goods sold</td><td class="">lowest</td><td class="">highest</td></tr><tr class=""><td class="">Net income</td><td class="">highest</td><td class="">lowest</td></tr><tr class=""><td class="">Income taxes</td><td class="">highest</td><td class=""><b>lowest</b></td></tr></tbody></table></div>
+<div class="box deep"><b>LIFO conformity rule</b>If a company uses LIFO for tax purposes, it must also use LIFO for
+financial reporting. That is why the tax saving comes at the cost of reporting lower profit.</div>
+<div class="box"><b>Who uses what (deck examples)</b>FIFO: Reebok International, Wendy's International.
+LIFO: Campbell Soup, Krogers, Walgreen Drugs. Average-cost: Bristol-Myers Squibb, Starbucks, Motorola.
+Stanley Black &amp; Decker uses LIFO for domestic and FIFO for foreign inventories. All three methods are
+acceptable; a company must disclose which it uses.</div>
+</section><section id="errors">
+<h2><small>LO 3</small>Inventory errors</h2>
+<p><b>Common causes:</b> failing to count or price the inventory correctly, and not properly recognising the
+transfer of legal title to goods in transit. An error hits both the income statement and the balance sheet.</p>
+<h3>Income statement effects</h3>
+<p>Work from the formula. Cost of goods sold = beginning inventory + purchases − ending inventory.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">The error</th><th class="">Cost of goods sold</th><th class="">Net income</th></tr></thead><tbody><tr class=""><td class="">Beginning inventory <b>understated</b></td><td class="">understated</td><td class="">overstated</td></tr><tr class=""><td class="">Beginning inventory <b>overstated</b></td><td class="">overstated</td><td class="">understated</td></tr><tr class=""><td class="">Ending inventory <b>understated</b></td><td class="">overstated</td><td class="">understated</td></tr><tr class=""><td class="">Ending inventory <b>overstated</b></td><td class="">understated</td><td class="">overstated</td></tr></tbody></table></div><div class="figwrap"><svg viewBox="0 0 820 150" role="img" aria-label="two year error effect"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--muted)"/></marker></defs><rect x="20" y="40" width="230" height="70" rx="10" class="bxw"/><text x="135.0" y="63" text-anchor="middle" class="t-b">Year 1: ending inventory</text><text x="135.0" y="79" text-anchor="middle" class="t-s">overstated by $3,000</text><text x="135.0" y="95" text-anchor="middle" class="t-s">net income overstated $3,000</text><path d="M255,75 L300,75" class="ar"/><rect x="305" y="40" width="250" height="70" rx="10" class="bxa"/><text x="430.0" y="63" text-anchor="middle" class="t-b">Year 2: that becomes</text><text x="430.0" y="79" text-anchor="middle" class="t-s">beginning inventory</text><text x="430.0" y="95" text-anchor="middle" class="t-s">net income understated $3,000</text><path d="M560,75 L605,75" class="ar"/><rect x="610" y="40" width="190" height="70" rx="10" class="bxg"/><text x="705.0" y="63" text-anchor="middle" class="t-b">Two years combined</text><text x="705.0" y="79" text-anchor="middle" class="t-s">total net income</text><text x="705.0" y="95" text-anchor="middle" class="t-s">is correct</text></svg><div class="cap">An ending inventory error reverses itself in the next period, because this year's ending inventory is next year's beginning inventory.</div></div>
+<h3>Balance sheet effects</h3>
+<p>Use the accounting equation: Assets = Liabilities + Stockholders' equity.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Ending inventory error</th><th class="">Assets</th><th class="">Liabilities</th><th class="">Stockholders' equity</th></tr></thead><tbody><tr class=""><td class="">Overstated</td><td class="">overstated</td><td class="">no effect</td><td class="">overstated</td></tr><tr class=""><td class="">Understated</td><td class="">understated</td><td class="">no effect</td><td class="">understated</td></tr></tbody></table></div>
+<div class="box say"><b>DO IT! Visual Company</b>2016 ending inventory overstated by $22,000.<br>
+<b>2016:</b> ending inventory overstated $22,000 · cost of goods sold understated $22,000 · stockholders' equity
+overstated $22,000.<br>
+<b>2017:</b> ending inventory no effect · cost of goods sold <b>overstated $22,000</b> · stockholders' equity
+no effect (the two errors have cancelled).</div>
+<div class="box trap"><b>Deck question</b>"Understating ending inventory will overstate: assets / cost of goods
+sold / net income / stockholders' equity." Answer: <b>cost of goods sold</b>. The other three are understated.</div>
+</section><section id="presentation">
+<h2><small>LO 4</small>Presentation and analysis</h2>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Statement</th><th class="">How inventory appears</th></tr></thead><tbody><tr class=""><td class="">Balance sheet</td><td class="">inventory as a <b>current asset</b></td></tr><tr class=""><td class="">Income statement</td><td class=""><b>cost of goods sold</b> subtracted from sales revenue</td></tr></tbody></table></div>
+<p>Companies must also disclose:</p>
+<ul>
+<li>the major <b>inventory classifications</b>,</li>
+<li>the <b>basis of accounting</b> (cost, or lower-of-cost-or-market / net realisable value), and</li>
+<li>the <b>costing method</b> used (FIFO, LIFO or average-cost).</li>
+</ul>
+<div class="box"><b>If your paper goes past the deck</b>The textbook's LO 4 also covers two ratios:
+<b>inventory turnover = cost of goods sold ÷ average inventory</b>, and
+<b>days in inventory = 365 ÷ inventory turnover</b>. Average inventory = (beginning + ending) ÷ 2.
+A higher turnover means inventory is sold faster and less cash is tied up.</div>
+</section><section id="perpetual">
+<h2><small>Appendix 6A (LO 5)</small>The same methods in a perpetual system</h2>
+<p>In a perpetual system the inventory account is updated at <b>every</b> purchase and sale, so cost of goods sold
+is computed as each sale happens. Same Houston Electronics data, but now the 550-unit sale happens on September 10,
+<b>before</b> the November 27 purchase.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Explanation</th><th class="n">Units</th><th class="n">Unit cost</th><th class="n">Total cost</th><th class="n">Balance in units</th></tr></thead><tbody><tr class=""><td class="">1/1</td><td class="">Beginning inventory</td><td class="n">100</td><td class="n">$10</td><td class="n">$1,000</td><td class="n">100</td></tr><tr class=""><td class="">4/15</td><td class="">Purchase</td><td class="n">200</td><td class="n">11</td><td class="n">2,200</td><td class="n">300</td></tr><tr class=""><td class="">8/24</td><td class="">Purchase</td><td class="n">300</td><td class="n">12</td><td class="n">3,600</td><td class="n">600</td></tr><tr class=""><td class="">9/10</td><td class=""><b>Sale</b></td><td class="n">550</td><td class="n"></td><td class="n"></td><td class="n">50</td></tr><tr class=""><td class="">11/27</td><td class="">Purchase</td><td class="n">400</td><td class="n">13</td><td class="n">5,200</td><td class="n">450</td></tr><tr class="tot"><td class=""></td><td class=""></td><td class="n"></td><td class="n"></td><td class="n"><b>$12,000</b></td><td class="n"></td></tr></tbody></table></div><div class="tablewrap"><table class="sched"><thead><tr><th class="">Method</th><th class="">Cost of goods sold</th><th class="">Ending inventory</th><th class="">Same as periodic?</th></tr></thead><tbody><tr class=""><td class="">FIFO</td><td class="">$6,200 <span class='t-s'>(100@10 + 200@11 + 250@12)</span></td><td class="">$5,800 <span class='t-s'>(50@12 + 400@13)</span></td><td class=""><b>Yes</b> — FIFO always gives the same answer either way</td></tr><tr class=""><td class="">LIFO</td><td class="">$6,300 <span class='t-s'>(300@12 + 200@11 + 50@10)</span></td><td class="">$5,700 <span class='t-s'>(50@10 + 400@13)</span></td><td class="">No — periodic LIFO gave $7,000 / $5,000</td></tr><tr class=""><td class="">Moving-average</td><td class="">$6,233</td><td class="">$5,767</td><td class="">No — periodic average gave $6,600 / $5,400</td></tr></tbody></table></div>
+<h3>Moving-average, step by step</h3>
+<p>A new average unit cost is computed <b>after every purchase</b>, never after a sale.</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $10) $1,000</td></tr><tr class=""><td class="">Apr. 15</td><td class="">(200 @ $11) $2,200</td><td class=""></td><td class="">(300 @ $10.667) $3,200</td></tr><tr class=""><td class="">Aug. 24</td><td class="">(300 @ $12) $3,600</td><td class=""></td><td class="">(600 @ $11.333) $6,800</td></tr><tr class=""><td class="">Sept. 10</td><td class=""></td><td class="">(550 @ $11.333) <b>$6,233</b></td><td class="">(50 @ $11.333) $567</td></tr><tr class=""><td class="">Nov. 27</td><td class="">(400 @ $13) $5,200</td><td class=""></td><td class="">(450 @ $12.816) <b>$5,767</b></td></tr></tbody></table></div>
+<div class="box trap"><b>The one difference that catches people</b>Under a perpetual system, <b>LIFO and
+moving-average give different answers from the periodic versions</b>, because a sale is costed using only the goods
+on hand at that moment. FIFO is the exception: the oldest costs are the oldest costs whenever you look, so
+perpetual FIFO = periodic FIFO.</div>
+<div class="box"><b>Returns in a perpetual system</b>A <b>sales return</b> puts goods back into inventory at the
+cost they were taken out at. A <b>purchase return</b> removes the returned units at their purchase cost, and under
+moving-average it forces a fresh average.</div>
+</section><section id="problems">
+<h2><small>Worked problems</small>The two assignment questions, solved</h2>
+<h3>P6.5A — Koetteritz Inc., June 2020 (periodic)</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Description</th><th class="n">Units</th><th class="n">Unit cost / price</th></tr></thead><tbody><tr class=""><td class="">June 1</td><td class="">Beginning inventory</td><td class="n">40</td><td class="n">$40</td></tr><tr class=""><td class="">June 4</td><td class="">Purchase</td><td class="n">135</td><td class="n">43</td></tr><tr class=""><td class="">June 10</td><td class="">Sale</td><td class="n">110</td><td class="n">70</td></tr><tr class=""><td class="">June 11</td><td class="">Sale return</td><td class="n">15</td><td class="n">70</td></tr><tr class=""><td class="">June 18</td><td class="">Purchase</td><td class="n">55</td><td class="n">46</td></tr><tr class=""><td class="">June 18</td><td class="">Purchase return</td><td class="n">10</td><td class="n">46</td></tr><tr class=""><td class="">June 25</td><td class="">Sale</td><td class="n">65</td><td class="n">76</td></tr><tr class=""><td class="">June 28</td><td class="">Purchase</td><td class="n">35</td><td class="n">50</td></tr></tbody></table></div>
+<h4>Step 1 — goods available for sale</h4>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Item</th><th class="n">Units</th><th class="n">Cost</th></tr></thead><tbody><tr class=""><td class="">Beginning inventory 40 @ $40</td><td class="n">40</td><td class="n">$1,600</td></tr><tr class=""><td class="">Purchase 135 @ $43</td><td class="n">135</td><td class="n">5,805</td></tr><tr class=""><td class="">Purchase 55 @ $46</td><td class="n">55</td><td class="n">2,530</td></tr><tr class=""><td class="">Purchase return 10 @ $46</td><td class="n">(10)</td><td class="n">(460)</td></tr><tr class=""><td class="">Purchase 35 @ $50</td><td class="n">35</td><td class="n">1,750</td></tr><tr class="tot"><td class=""><b>Cost of goods available for sale</b></td><td class="n"><b>255</b></td><td class="n"><b>$11,225</b></td></tr><tr class=""><td class="">Units sold (110 − 15 + 65)</td><td class="n">(160)</td><td class="n"></td></tr><tr class=""><td class=""><b>Ending inventory in units</b></td><td class="n"><b>95</b></td><td class="n"></td></tr></tbody></table></div>
+<h4>Step 2 — net sales</h4>
+<p>(110 × $70) − (15 × $70) + (65 × $76) = $7,700 − $1,050 + $4,940 = <b>$11,590</b></p>
+<h4>Step 3 — the three methods</h4>
+<div class="tablewrap"><table class="sched"><thead><tr><th class=""></th><th class="n">LIFO</th><th class="n">FIFO</th><th class="n">Average-cost</th></tr></thead><tbody><tr class=""><td class="">Ending inventory, 95 units costed</td><td class="n">40 @ $40 = 1,600<br>55 @ $43 = 2,365</td><td class="n">35 @ $50 = 1,750<br>45 @ $46 = 2,070<br>15 @ $43 = 645</td><td class="n">$11,225 ÷ 255 = $44.02<br>95 × $44.02</td></tr><tr class="sub"><td class=""><b>(i) Ending inventory</b></td><td class="n"><b>$3,965</b></td><td class="n"><b>$4,465</b></td><td class="n"><b>$4,181.90</b></td></tr><tr class=""><td class=""><b>(ii) Cost of goods sold</b></td><td class="n">$7,260</td><td class="n">$6,760</td><td class="n">$7,043.10</td></tr><tr class=""><td class=""><b>(iii) Gross profit</b></td><td class="n">$4,330</td><td class="n">$4,830</td><td class="n">$4,546.90</td></tr><tr class="tot"><td class=""><b>(iv) Gross profit rate</b></td><td class="n"><b>37.4%</b></td><td class="n"><b>41.7%</b></td><td class="n"><b>39.2%</b></td></tr></tbody></table></div>
+<p>Cost of goods sold = $11,225 − ending inventory. Gross profit rate = gross profit ÷ net sales
+($4,330/11,590 = 37.36%; $4,830/11,590 = 41.67%; $4,546.90/11,590 = 39.23%).</p>
+<div class="box say"><b>Part (b), in one sentence</b>Prices rose through June ($40 → $50), so FIFO keeps the dearest
+costs in inventory and reports the highest gross profit ($4,830), LIFO reports the lowest ($4,330), and
+average-cost falls between them ($4,546.90) — with identical sales in all three.</div>
+<h3>P6.8A — Dempsey Inc., January 2020 (perpetual)</h3>
+<p>Units available 310, cost available $5,460, units sold 190, ending inventory 120 units.<br>
+Net sales = (110 × $28) − (10 × $28) + (90 × $32) = $3,080 − $280 + $2,880 = <b>$5,680</b>.</p>
+<h4>(1) LIFO, perpetual</h4>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $15) $1,500</td></tr><tr class=""><td class="">Jan. 5</td><td class="">(140 @ $18) $2,520</td><td class=""></td><td class="">(100 @ $15) (140 @ $18) $4,020</td></tr><tr class=""><td class="">Jan. 8</td><td class=""></td><td class="">(110 @ $18) $1,980</td><td class="">(100 @ $15) (30 @ $18) $2,040</td></tr><tr class=""><td class="">Jan. 10</td><td class=""><i>sale return</i></td><td class="">(10 @ $18) ($180)</td><td class="">(100 @ $15) (40 @ $18) $2,220</td></tr><tr class=""><td class="">Jan. 15</td><td class="">(55 @ $20) $1,100</td><td class=""></td><td class="">… (55 @ $20) $3,320</td></tr><tr class=""><td class="">Jan. 16</td><td class=""><i>purchase return</i> (5 @ $20) ($100)</td><td class=""></td><td class="">(100 @ $15) (40 @ $18) (50 @ $20) $3,220</td></tr><tr class=""><td class="">Jan. 20</td><td class=""></td><td class="">(50 @ $20) + (40 @ $18) = $1,720</td><td class="">(100 @ $15) $1,500</td></tr><tr class=""><td class="">Jan. 25</td><td class="">(20 @ $22) $440</td><td class=""></td><td class="">(100 @ $15) (20 @ $22) $1,940</td></tr><tr class="tot"><td class=""></td><td class=""></td><td class=""><b>COGS $3,520</b></td><td class=""><b>Ending inventory $1,940</b></td></tr></tbody></table></div>
+<p>Gross profit = $5,680 − $3,520 = <b>$2,160</b>.</p>
+<h4>(2) FIFO, perpetual</h4>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 8</td><td class=""></td><td class="">(100 @ $15) + (10 @ $18) = $1,680</td><td class="">(130 @ $18) $2,340</td></tr><tr class=""><td class="">Jan. 10</td><td class=""><i>sale return</i></td><td class="">(10 @ $18) ($180)</td><td class="">(140 @ $18) $2,520</td></tr><tr class=""><td class="">Jan. 20</td><td class=""></td><td class="">(90 @ $18) $1,620</td><td class="">(50 @ $18) (50 @ $20) $1,900</td></tr><tr class=""><td class="">Jan. 25</td><td class="">(20 @ $22) $440</td><td class=""></td><td class="">(50 @ $18) (50 @ $20) (20 @ $22) $2,340</td></tr><tr class="tot"><td class=""></td><td class=""></td><td class=""><b>COGS $3,120</b></td><td class=""><b>Ending inventory $2,340</b></td></tr></tbody></table></div>
+<p>Gross profit = $5,680 − $3,120 = <b>$2,560</b>.</p>
+<h4>(3) Moving-average, perpetual (unit cost to three decimals)</h4>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Event</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $15.000) $1,500.00</td></tr><tr class=""><td class="">Jan. 5</td><td class="">purchase 140 @ $18</td><td class=""></td><td class="">(240 @ $16.750) $4,020.00</td></tr><tr class=""><td class="">Jan. 8</td><td class="">sale 110</td><td class="">(110 @ $16.750) $1,842.50</td><td class="">(130 @ $16.750) $2,177.50</td></tr><tr class=""><td class="">Jan. 10</td><td class="">sale return 10</td><td class="">($167.50)</td><td class="">(140 @ $16.750) $2,345.00</td></tr><tr class=""><td class="">Jan. 15</td><td class="">purchase 55 @ $20</td><td class=""></td><td class="">(195 @ $17.667) $3,445.00</td></tr><tr class=""><td class="">Jan. 16</td><td class="">purchase return 5 @ $20</td><td class=""></td><td class="">(190 @ $17.605) $3,345.00</td></tr><tr class=""><td class="">Jan. 20</td><td class="">sale 90</td><td class="">(90 @ $17.605) $1,584.45</td><td class="">(100 @ $17.605) $1,760.55</td></tr><tr class=""><td class="">Jan. 25</td><td class="">purchase 20 @ $22</td><td class=""></td><td class="">(120 @ $18.338) $2,200.55</td></tr><tr class="tot"><td class=""></td><td class=""></td><td class=""><b>COGS $3,259.45</b></td><td class=""><b>Ending inventory $2,200.55</b></td></tr></tbody></table></div>
+<p>Gross profit = $5,680 − $3,259.45 = <b>$2,420.55</b> (≈ $2,421).</p>
+<div class="tablewrap"><table class="sched"><thead><tr><th class=""></th><th class="n">LIFO</th><th class="n">FIFO</th><th class="n">Moving-average</th></tr></thead><tbody><tr class=""><td class="">Cost of goods sold</td><td class="n">$3,520</td><td class="n">$3,120</td><td class="n">$3,259.45</td></tr><tr class=""><td class="">Ending inventory</td><td class="n">1,940</td><td class="n">2,340</td><td class="n">2,200.55</td></tr><tr class="tot"><td class=""><b>Gross profit</b></td><td class="n"><b>$2,160</b></td><td class="n"><b>$2,560</b></td><td class="n"><b>$2,420.55</b></td></tr></tbody></table></div>
+<div class="box warn"><b>Check your work in one line</b>Cost of goods sold + ending inventory must equal the cost
+of goods available for sale: $3,520 + $1,940 = $3,120 + $2,340 = $3,259.45 + $2,200.55 = <b>$5,460</b>. If it does
+not, a layer is wrong.</div>
+</section><section id="qa">
+<h2><small>Self-check</small>Question bank</h2>
+<p>Answer out loud, then open the card. Filter by learning objective.</p>
+<div class="filters" id="qa-filters"></div>
+<details class="qa" data-tag="lo 1"><summary>How does a merchandiser's inventory differ from a manufacturer's?<span class="tag">lo 1</span></summary><div class="a">A merchandising company has one inventory account: goods purchased ready for resale. A manufacturer has three: raw materials, work in process and finished goods. All are current assets.</div></details><details class="qa" data-tag="lo 1"><summary>Why does a company with a perpetual system still take a physical count?<span class="tag">lo 1</span></summary><div class="a">To check the accuracy of the records, and to measure inventory lost through wasted raw materials, shoplifting or employee theft.</div></details><details class="qa" data-tag="lo 1"><summary>Why does a periodic system need a physical count?<span class="tag">lo 1</span></summary><div class="a">Because it has no running record: the count determines the inventory on hand and, through the formula, the cost of goods sold for the period.</div></details><details class="qa" data-tag="lo 1"><summary>What does taking a physical inventory involve?<span class="tag">lo 1</span></summary><div class="a">Counting, weighing or measuring each kind of inventory on hand, usually when the business is closed or slow and at the end of the accounting period.</div></details><details class="qa" data-tag="lo 1"><summary>Who owns goods in transit?<span class="tag">lo 1</span></summary><div class="a">Whoever has legal title, which the terms of sale decide. FOB shipping point: title passes when the public carrier accepts the goods, so the buyer includes them. FOB destination: title passes on delivery, so the seller includes them.</div></details><details class="qa" data-tag="lo 1"><summary>What are consigned goods and who counts them?<span class="tag">lo 1</span></summary><div class="a">Goods held by one party to sell on behalf of the owner for a fee, without taking ownership. The consignor (the owner) includes them in inventory; the holder never does.</div></details><details class="qa" data-tag="lo 2"><summary>What is included in the cost of inventory?<span class="tag">lo 2</span></summary><div class="a">All expenditures necessary to acquire the goods and put them in a condition ready for sale.</div></details><details class="qa" data-tag="lo 2"><summary>Name the four costing methods.<span class="tag">lo 2</span></summary><div class="a">Specific identification, FIFO, LIFO and average-cost. The last three are cost flow assumptions.</div></details><details class="qa" data-tag="lo 2"><summary>When is specific identification used, and why is it rare?<span class="tag">lo 2</span></summary><div class="a">When each unit can actually be identified, such as cars or jewellery. It is rare because tracking every unit is impractical, and with identical goods it lets management pick which cost to expense.</div></details><details class="qa" data-tag="lo 2"><summary>Must the cost flow assumption match the physical movement of goods?<span class="tag">lo 2</span></summary><div class="a">No. Only specific identification follows actual units; FIFO, LIFO and average-cost are assumptions about costs, not about goods.</div></details><details class="qa" data-tag="lo 2"><summary>Explain FIFO in one line, and how you compute ending inventory under it.<span class="tag">lo 2</span></summary><div class="a">The costs of the earliest goods purchased are the first charged to cost of goods sold. Ending inventory is costed from the most recent purchase working backwards — LISH, last in still here.</div></details><details class="qa" data-tag="lo 2"><summary>Explain LIFO in one line.<span class="tag">lo 2</span></summary><div class="a">The costs of the latest goods purchased are the first charged to cost of goods sold, so the oldest costs stay in ending inventory — FISH, first in still here. It seldom matches physical flow, except for goods stored in piles like coal or hay.</div></details><details class="qa" data-tag="lo 2"><summary>How is the weighted-average unit cost calculated?<span class="tag">lo 2</span></summary><div class="a">Cost of goods available for sale ÷ total units available for sale. In the Houston example, $12,000 ÷ 1,000 = $12.00, giving ending inventory of $5,400 and cost of goods sold of $6,600. It is not the simple average of the unit prices.</div></details><details class="qa" data-tag="lo 2"><summary>In a period of rising prices, which method gives the highest net income, and why?<span class="tag">lo 2</span></summary><div class="a">FIFO. The oldest, cheapest costs go to cost of goods sold, so cost of goods sold is lowest and both gross profit and net income are highest. Ending inventory is also closest to current cost.</div></details><details class="qa" data-tag="lo 2"><summary>Which method gives the lowest income taxes when prices are rising?<span class="tag">lo 2</span></summary><div class="a">LIFO, because the newest and dearest costs go to cost of goods sold, giving the lowest taxable income. Its weakness is that ending inventory on the balance sheet is understated relative to current cost.</div></details><details class="qa" data-tag="lo 2"><summary>What is the LIFO conformity rule?<span class="tag">lo 2</span></summary><div class="a">If a company uses LIFO for tax purposes, it must also use LIFO in its financial reporting.</div></details><details class="qa" data-tag="lo 3"><summary>What causes inventory errors?<span class="tag">lo 3</span></summary><div class="a">Failing to count or price inventory correctly, and failing to recognise the transfer of legal title to goods in transit.</div></details><details class="qa" data-tag="lo 3"><summary>If ending inventory is understated, what happens to cost of goods sold and net income?<span class="tag">lo 3</span></summary><div class="a">Cost of goods sold is overstated and net income is understated. Assets and stockholders' equity are understated too.</div></details><details class="qa" data-tag="lo 3"><summary>If beginning inventory is overstated, what happens?<span class="tag">lo 3</span></summary><div class="a">Cost of goods sold is overstated and net income is understated for that period.</div></details><details class="qa" data-tag="lo 3"><summary>Why do inventory errors affect two periods?<span class="tag">lo 3</span></summary><div class="a">This period's ending inventory is next period's beginning inventory, so the error reverses. Over the two years combined, total net income is correct.</div></details><details class="qa" data-tag="lo 3"><summary>Visual Company overstated 2016 ending inventory by $22,000. What are the effects in 2016 and 2017?<span class="tag">lo 3</span></summary><div class="a">2016: ending inventory overstated $22,000, cost of goods sold understated $22,000, stockholders' equity overstated $22,000. 2017: cost of goods sold overstated $22,000, with no effect on ending inventory or stockholders' equity.</div></details><details class="qa" data-tag="lo 3"><summary>How do you work out balance sheet effects of an inventory error?<span class="tag">lo 3</span></summary><div class="a">Use Assets = Liabilities + Stockholders' equity. An overstated ending inventory overstates assets and equity; liabilities are never affected.</div></details><details class="qa" data-tag="lo 4"><summary>How is inventory presented in the financial statements?<span class="tag">lo 4</span></summary><div class="a">As a current asset on the balance sheet, and through cost of goods sold, subtracted from sales revenue on the income statement.</div></details><details class="qa" data-tag="lo 4"><summary>What must a company disclose about inventory?<span class="tag">lo 4</span></summary><div class="a">The major inventory classifications, the basis of accounting (cost, or lower-of-cost-or-market / net realisable value) and the costing method used (FIFO, LIFO or average-cost).</div></details><details class="qa" data-tag="lo 4"><summary>What do inventory turnover and days in inventory measure?<span class="tag">lo 4</span></summary><div class="a">Inventory turnover = cost of goods sold ÷ average inventory: how many times inventory is sold in a period. Days in inventory = 365 ÷ inventory turnover: the average number of days a unit sits in stock.</div></details><details class="qa" data-tag="6A"><summary>Which method gives the same answer under periodic and perpetual, and why?<span class="tag">6A</span></summary><div class="a">FIFO. The earliest costs are the earliest costs whether you cost sales as they happen or all at once at period end. LIFO and average-cost differ, because in a perpetual system each sale can only use the layers on hand at that moment.</div></details><details class="qa" data-tag="6A"><summary>How does moving-average work?<span class="tag">6A</span></summary><div class="a">A new weighted-average unit cost is computed after every purchase (and after a purchase return). Each sale is costed at the average in force at that moment. In the Houston example the averages are $10.667, $11.333 and $12.816, giving cost of goods sold $6,233 and ending inventory $5,767.</div></details><details class="qa" data-tag="6A"><summary>In perpetual LIFO, what happens to a sales return?<span class="tag">6A</span></summary><div class="a">The goods go back into inventory at the cost they were charged out at, and cost of goods sold is reduced by that amount. In P6.8A the January 10 return of 10 units re-enters at $18.</div></details><details class="qa" data-tag="problems"><summary>In P6.5A, why is the answer the same whichever order you do the purchases in?<span class="tag">problems</span></summary><div class="a">Because it is a periodic system: only the totals matter. You add up all units and costs available for sale ($11,225 for 255 units), decide ending inventory units (95), then cost those 95 units according to the method.</div></details><details class="qa" data-tag="problems"><summary>In P6.5A, how do you handle the purchase return and sales return?<span class="tag">problems</span></summary><div class="a">The purchase return reduces units and cost available for sale (10 units, $460). The sales return reduces units sold and sales revenue (15 units, $1,050), so net sales are $11,590 and units sold are 160.</div></details><details class="qa" data-tag="problems"><summary>In P6.8A, what is the quickest check on your three answers?<span class="tag">problems</span></summary><div class="a">Cost of goods sold plus ending inventory must equal the $5,460 cost of goods available for sale under every method, and net sales stay $5,680 throughout.</div></details></section><section id="quiz">
+<h2><small>Self-test</small>Quiz and drills</h2>
+<p>Click an answer; the correct one turns green and the reason appears.</p>
+<span class="score" id="mcq-score"></span> <button class="btn" id="mcq-reset">reset</button>
+<div class="quiz" id="mcq"></div>
+<h3>Fill in the blanks</h3>
+<div class="quiz" id="blanks"></div>
+<h3>Computation drills</h3>
+<p>Work it on paper first, then reveal.</p>
+<div class="drill" id="drill"></div>
+</section><section id="checklist">
+<h2><small>Night before</small>Must be automatic</h2>
+<ol class="steps">
+<li><b>The formula</b>Beginning inventory + purchases = cost of goods available for sale; minus ending inventory = cost of goods sold.</li>
+<li><b>Three manufacturing classes</b>Raw materials, work in process, finished goods — all current assets.</li>
+<li><b>FOB rules</b>Shipping point → buyer owns in transit. Destination → seller owns in transit.</li>
+<li><b>Consignment</b>Consignee never owns; consignor counts the goods.</li>
+<li><b>Four methods</b>Specific identification, FIFO, LIFO, average-cost. Assumptions need not match physical flow.</li>
+<li><b>LISH and FISH</b>FIFO leaves the newest costs in inventory; LIFO leaves the oldest.</li>
+<li><b>Weighted average</b>Total cost ÷ total units, never the average of prices.</li>
+<li><b>Rising prices</b>FIFO: highest inventory, highest net income, highest tax. LIFO: lowest net income, lowest tax. Average in between.</li>
+<li><b>LIFO conformity rule</b>LIFO for tax means LIFO for reporting.</li>
+<li><b>Error effects</b>Ending inventory overstated → cost of goods sold understated → net income, assets and equity overstated; reverses next year.</li>
+<li><b>Disclosure</b>Classifications, basis of accounting, costing method.</li>
+<li><b>Perpetual</b>FIFO same as periodic; LIFO and moving-average differ. Recompute the average only after a purchase.</li>
+<li><b>Your two problems</b>P6.5A gross profits 4,330 / 4,830 / 4,546.90 (LIFO/FIFO/average). P6.8A gross profits 2,160 / 2,560 / 2,420.55.</li>
+<li><b>The check</b>Cost of goods sold + ending inventory = cost of goods available for sale, every time.</li>
+</ol>
+</section>
+<p class="foot">Built from the Chapter 6 lecture deck (<i>ch06-FA.pptx</i>, 42 slides) and the textbook illustrations it uses. Every figure on this page was recomputed independently; the two assignment problems match the textbook check figures.</p>
+</main>
+<script>
+const DATA = {"mcq": [{"q": "Goods in transit should be included in the inventory of the buyer when the:", "o": ["public carrier accepts the goods from the seller", "goods reach the buyer", "terms of sale are FOB destination", "seller ships the invoice"], "a": 0, "why": "FOB shipping point: title passes when the carrier accepts the goods. (The deck's own question, LO 1.)"}, {"q": "The cost flow method that often parallels the actual physical flow of merchandise is the:", "o": ["FIFO method", "LIFO method", "average-cost method", "gross profit method"], "a": 0, "why": "FIFO: most businesses genuinely sell their oldest goods first."}, {"q": "In a period of inflation, the cost flow method that results in the lowest income taxes is the:", "o": ["FIFO method", "LIFO method", "average-cost method", "gross profit method"], "a": 1, "why": "LIFO charges the newest, highest costs to cost of goods sold, so taxable income is lowest."}, {"q": "Understating ending inventory will overstate:", "o": ["assets", "cost of goods sold", "net income", "stockholders' equity"], "a": 1, "why": "Lower ending inventory means more cost stays in cost of goods sold. Assets, net income and equity are all understated."}, {"q": "A manufacturing company reports which three inventory accounts?", "o": ["Merchandise, supplies, equipment", "Raw materials, work in process, finished goods", "Purchases, freight-in, returns", "Direct materials, overhead, cost of goods sold"], "a": 1, "why": "And all three are current assets."}, {"q": "Houston Electronics has 1,000 units costing $12,000 available and 450 units left. Under FIFO, ending inventory is:", "o": ["$5,000", "$5,400", "$5,800", "$6,200"], "a": 2, "why": "400 @ $13 + 50 @ $12 = $5,800. $5,000 is LIFO, $5,400 average-cost, $6,200 is FIFO cost of goods sold."}, {"q": "With the same data, average-cost ending inventory is:", "o": ["$5,175", "$5,400", "$5,767", "$6,600"], "a": 1, "why": "$12,000 ÷ 1,000 = $12.00 per unit; 450 × $12 = $5,400."}, {"q": "Which statement about the weighted-average unit cost is true?", "o": ["It is the simple average of the unit prices", "It is cost of goods available for sale ÷ units available for sale", "It is recomputed after every sale in a periodic system", "It always equals the most recent purchase price"], "a": 1, "why": "Purchases of different sizes must be weighted, so you divide total cost by total units."}, {"q": "Goods held on consignment by a store should be:", "o": ["included in the store's inventory", "excluded from the store's inventory", "split equally between the two parties", "recorded as a purchase when received"], "a": 1, "why": "Ownership never passes to the consignee, so the consignor keeps them in inventory."}, {"q": "Which method gives the same ending inventory under both periodic and perpetual systems?", "o": ["LIFO", "FIFO", "Average-cost", "All three"], "a": 1, "why": "FIFO. LIFO and average-cost depend on what is on hand at the moment of each sale."}, {"q": "An error that overstates ending inventory this year will, next year:", "o": ["overstate net income again", "understate net income", "have no effect on net income", "overstate assets again"], "a": 1, "why": "It becomes an overstated beginning inventory, so cost of goods sold is overstated and net income understated. The two years cancel."}, {"q": "Under the LIFO conformity rule, a company that uses LIFO for tax purposes must:", "o": ["also use LIFO for financial reporting", "use FIFO for financial reporting", "disclose FIFO values only", "switch methods every three years"], "a": 0, "why": "Tax and reporting must agree."}, {"q": "In P6.8A the January 10 sale return of 10 units is recorded under LIFO at:", "o": ["$15", "$18", "$20", "$28"], "a": 1, "why": "Returns go back in at the cost they were sold at; that sale was costed at $18."}, {"q": "In P6.5A, cost of goods available for sale is:", "o": ["$9,625", "$11,225", "$11,590", "$12,000"], "a": 1, "why": "$1,600 beginning + $9,625 net purchases = $11,225. $11,590 is net sales."}, {"q": "Which disclosure is NOT required for inventory?", "o": ["Major inventory classifications", "Basis of accounting", "Costing method used", "Names of major suppliers"], "a": 3, "why": "The first three are required; supplier names are not."}], "blanks": [{"s": "Cost of goods available for sale − ending inventory = ___.", "a": ["cost of goods sold", "COGS"]}, {"s": "A manufacturing company classifies inventory as raw materials, work in process and ___.", "a": ["finished goods"]}, {"s": "All inventories are reported on the balance sheet as ___ assets.", "a": ["current"]}, {"s": "Under FOB ___, ownership passes when the public carrier accepts the goods from the seller.", "a": ["shipping point", "shipping-point"]}, {"s": "Under FOB destination, ownership stays with the ___ until the goods reach the buyer.", "a": ["seller"]}, {"s": "Goods held for another party to sell for a fee, without transfer of ownership, are ___ goods.", "a": ["consigned", "consignment"]}, {"s": "Hasbeen Company's corrected inventory is $___.", "a": ["195,000", "195000"]}, {"s": "Inventory cost includes all expenditures necessary to acquire goods and put them in a condition ready for ___.", "a": ["sale"]}, {"s": "The actual physical flow costing method is ___ identification.", "a": ["specific"]}, {"s": "FIFO ending inventory is remembered by the mnemonic ___ (last in still here).", "a": ["LISH"]}, {"s": "LIFO ending inventory is remembered by the mnemonic ___ (first in still here).", "a": ["FISH"]}, {"s": "Weighted-average unit cost = cost of goods available for sale ÷ ___.", "a": ["units available for sale", "total units available for sale", "total units"]}, {"s": "In the Houston Electronics example the weighted-average unit cost is $___.", "a": ["12", "12.00"]}, {"s": "In a period of rising prices, ___ produces the highest net income.", "a": ["FIFO"]}, {"s": "In a period of rising prices, ___ produces the lowest income taxes.", "a": ["LIFO"]}, {"s": "The rule that a company using LIFO for tax must also use it for reporting is the LIFO ___ rule.", "a": ["conformity"]}, {"s": "An overstated ending inventory ___ cost of goods sold.", "a": ["understates", "understated"]}, {"s": "An inventory error affects net income in ___ periods.", "a": ["two", "2"]}, {"s": "On the income statement, cost of goods sold is subtracted from ___.", "a": ["sales", "sales revenue", "net sales"]}, {"s": "Inventory turnover = cost of goods sold ÷ ___ inventory.", "a": ["average"]}, {"s": "Days in inventory = ___ ÷ inventory turnover.", "a": ["365"]}, {"s": "The only method whose answer is identical under periodic and perpetual systems is ___.", "a": ["FIFO"]}, {"s": "In P6.5A gross profit under FIFO is $___.", "a": ["4,830", "4830"]}, {"s": "In P6.8A gross profit under LIFO is $___.", "a": ["2,160", "2160"]}, {"s": "In P6.8A the cost of goods available for sale is $___.", "a": ["5,460", "5460"]}], "drill": [{"task": "Company counted $200,000. It included $15,000 of goods held on consignment and left out $10,000 of purchases in transit FOB shipping point. Correct inventory?", "cmd": ["200,000 - 15,000 (not ours: consignor's)", "        + 10,000 (title already passed to us)", "        = 195,000"]}, {"task": "1,000 units cost $12,000 available; 450 units left; purchases were 100@$10, 200@$11, 300@$12, 400@$13. FIFO ending inventory and cost of goods sold?", "cmd": ["EI  = 400 x 13 + 50 x 12 = 5,800", "COGS = 12,000 - 5,800   = 6,200"]}, {"task": "Same data, LIFO.", "cmd": ["EI  = 100 x 10 + 200 x 11 + 150 x 12 = 5,000", "COGS = 12,000 - 5,000 = 7,000"]}, {"task": "Same data, average-cost.", "cmd": ["unit = 12,000 / 1,000 = 12.00", "EI   = 450 x 12.00 = 5,400", "COGS = 12,000 - 5,400 = 6,600"]}, {"task": "Ending inventory is understated by $5,000. What happens to cost of goods sold, net income, assets and equity?", "cmd": ["COGS      overstated  5,000", "Net income understated 5,000", "Assets    understated 5,000", "Equity    understated 5,000"]}, {"task": "P6.5A: state cost of goods available for sale, units sold and ending inventory units.", "cmd": ["available: 40 + 135 + 55 - 10 + 35 = 255 units, $11,225", "sold:     110 - 15 + 65 = 160 units", "ending:   95 units"]}, {"task": "P6.5A: gross profit rate under FIFO.", "cmd": ["GP   = 11,590 - 6,760 = 4,830", "rate = 4,830 / 11,590 = 41.7%"]}, {"task": "P6.8A: moving average after the January 15 purchase.", "cmd": ["balance 140 units, 2,345.00", "+ 55 @ 20 = 1,100  ->  195 units, 3,445.00", "avg = 3,445 / 195 = 17.667"]}, {"task": "Perpetual LIFO sale on January 20 of 90 units, layers on hand 100@$15, 40@$18, 50@$20.", "cmd": ["newest first: 50 @ 20 = 1,000", "              40 @ 18 =   720", "COGS for this sale     = 1,720"]}]};
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+function store(k, v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+
+// theme
+(function(){
+  const saved = store('bdal-theme'); if(saved) document.documentElement.dataset.theme = saved;
+  $('#theme').onclick = () => {
+    const cur = document.documentElement.dataset.theme ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next; store('bdal-theme', next);
+  };
+})();
+
+// progress bar + active nav chip
+(function(){
+  const links = $$('#nav a'), secs = links.map(a => document.getElementById(a.hash.slice(1)));
+  function onScroll(){
+    const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    $('#progress').style.width = (max > 0 ? 100 * h.scrollTop / max : 0) + '%';
+    let cur = 0; secs.forEach((s, i) => { if(s && s.getBoundingClientRect().top < 120) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur));
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+})();
+
+// viva Q&A filters + expand all
+(function(){
+  const box = $('#qa-filters'); if(!box) return;
+  const items = $$('details.qa[data-tag]');
+  const tags = ['all', ...new Set(items.map(d => d.dataset.tag))];
+  tags.forEach(t => {
+    const b = document.createElement('button'); b.className = 'btn' + (t==='all' ? ' on' : ''); b.textContent = t;
+    b.onclick = () => { $$('.btn', box).forEach(x => x.classList.remove('on')); b.classList.add('on');
+      items.forEach(d => d.hidden = !(t==='all' || d.dataset.tag===t)); };
+    box.appendChild(b);
+  });
+  const all = document.createElement('button'); all.className = 'btn'; all.textContent = 'open / close all';
+  all.onclick = () => { const open = !items.every(d => d.open); items.forEach(d => { if(!d.hidden) d.open = open; }); };
+  box.appendChild(all);
+})();
+
+// MCQ
+(function(){
+  const host = $('#mcq'); if(!host) return;
+  let right = 0, answered = 0;
+  const score = $('#mcq-score');
+  const upd = () => score.textContent = `Score ${right} / ${answered} answered · ${DATA.mcq.length} questions`;
+  DATA.mcq.forEach((q, qi) => {
+    const d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = `<p>${qi+1}. ${q.q}</p><div class="opts"></div><div class="why">${q.why}</div>`;
+    q.o.forEach((o, oi) => {
+      const b = document.createElement('button'); b.className = 'opt'; b.innerHTML = o;
+      b.onclick = () => {
+        if(d.classList.contains('done')) return;
+        d.classList.add('done'); answered++;
+        const opts = $$('.opt', d); opts[q.a].classList.add('right');
+        if(oi === q.a) right++; else b.classList.add('wrong');
+        upd();
+      };
+      $('.opts', d).appendChild(b);
+    });
+    host.appendChild(d);
+  });
+  $('#mcq-reset').onclick = () => { right = answered = 0; $$('.q', host).forEach(d => { d.classList.remove('done'); $$('.opt', d).forEach(o => o.classList.remove('right','wrong')); }); upd(); };
+  upd();
+})();
+
+// fill in the blanks
+(function(){
+  const host = $('#blanks'); if(!host) return;
+  const norm = s => s.toLowerCase().replace(/[\s,]+/g,' ').trim();
+  DATA.blanks.forEach((b, i) => {
+    const d = document.createElement('div'); d.className = 'q blank';
+    const [pre, post] = b.s.split('___');
+    d.innerHTML = `<p style="font-weight:500">${i+1}. ${pre}<input aria-label="blank ${i+1}">${post}<span class="ans">→ ${b.a[0]}</span></p>
+      <button class="btn">check</button> <button class="btn">reveal</button>`;
+    const inp = $('input', d), [chk, rev] = $$('.btn', d);
+    const check = () => { const ok = b.a.some(a => norm(a) === norm(inp.value));
+      inp.classList.toggle('right', ok); inp.classList.toggle('wrong', !ok); if(!ok) d.classList.add('show'); };
+    chk.onclick = check; inp.onkeydown = e => { if(e.key === 'Enter') check(); };
+    rev.onclick = () => d.classList.toggle('show');
+    host.appendChild(d);
+  });
+})();
+
+// terminal drill
+(function(){
+  const host = $('#drill'); if(!host) return;
+  DATA.drill.forEach((t, i) => {
+    const d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = `<div class="task"><span><b>${i+1}.</b> ${t.task}</span><button class="btn">show command</button></div>
+      <div class="cmd"><pre class="term"><code>${t.cmd.map(c => `<span><span class="prompt">$</span> ${c.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span>`).join('')}</code></pre>${t.note ? `<p style="font-size:14px;color:var(--muted);margin:6px 0 0">${t.note}</p>` : ''}</div>`;
+    $('.btn', d).onclick = () => d.classList.toggle('show');
+    host.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
