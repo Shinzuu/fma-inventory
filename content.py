@@ -86,6 +86,71 @@ the total net income is correct again.</li>
 """
 
 
+def s_basics():
+    return """
+<h2><small>From zero</small>Inventory in plain English</h2>
+<p>Skip this if you already know the vocabulary. If you missed the classes, read it first: everything later
+depends on these five ideas.</p>
+<h3>1. What inventory is</h3>
+<p><b>Inventory is the goods a business is holding to sell.</b> A shop's shelves, a warehouse's boxes. It is an
+<b>asset</b> while it sits there. The moment it is sold, its cost stops being an asset and becomes an expense
+called <b>cost of goods sold</b>. That switch is the whole chapter.</p>
+<h3>2. Why the cost has to be split</h3>
+<p>During a month a shop starts with some goods, buys more, and sells some. Add the starting goods to the
+purchases and you get everything it could have sold: the <b>cost of goods available for sale</b>. At month end
+that pot is split in two.</p>
+""" + svg(820, 200, "".join([
+        box(20, 60, 200, 80, "bxw", ["Beginning inventory", "what was on the shelf", "at the start"]),
+        box(20, 150, 200, 40, "bxw", ["+ Purchases"]),
+        arrow(225, 110, 275, 110),
+        box(280, 70, 230, 80, "bxa", ["Cost of goods", "available for sale", "the whole pot"]),
+        arrow(515, 90, 565, 55), arrow(515, 130, 565, 165),
+        box(570, 20, 230, 70, "bxg", ["Ending inventory", "still on the shelf = ASSET"]),
+        box(570, 130, 230, 70, "bxv", ["Cost of goods sold", "sold = EXPENSE"]),
+    ]), "Whatever you do not count as ending inventory is treated as sold. That is why the costing method changes profit.", "splitting the pot") + """
+<div class="formula">Beginning inventory + Purchases − Ending inventory = Cost of goods sold</div>
+<h3>3. The two record-keeping systems</h3>
+""" + table(["", "Perpetual system", "Periodic system"], [
+        ["When records update", "at every purchase and every sale", "only at the end of the period"],
+        ["Cost of goods sold", "calculated at each sale", "calculated once, using the formula above"],
+        ["Physical count is for", "checking the records and finding losses (theft, waste)", "finding out what is on hand at all"],
+        ["Which problem is which", "P6.8A (Dempsey)", "P6.5A (Koetteritz)"],
+    ]) + """
+<h3>4. Why there are different costing methods</h3>
+<p>A shop buys identical goods at different prices through the year: 100 at $10, then 200 at $11, then 300 at
+$12. It sells some. <b>Which cost goes to the sold ones?</b> The goods are identical, so accounting has to
+<i>assume</i> an order:</p>
+<ul>
+<li><b>FIFO</b> — assume the oldest are sold first. Newest costs stay in inventory.</li>
+<li><b>LIFO</b> — assume the newest are sold first. Oldest costs stay in inventory.</li>
+<li><b>Average-cost</b> — mix all the costs together and use one average.</li>
+<li><b>Specific identification</b> — no assumption at all: track each actual unit. Only practical for things like
+cars, where every unit is identifiable.</li>
+</ul>
+<div class="box deep"><b>A 3-unit example you can hold in your head</b>Buy one item for $10, then one for $12. Sell
+one for $20. FIFO: cost of goods sold $10, inventory left $12, gross profit $10. LIFO: cost of goods sold $12,
+inventory left $10, gross profit $8. Average: cost $11 each, gross profit $9. Same shop, same sale, three
+different profits — all of them legal.</div>
+<h3>5. The words that will be used from here on</h3>
+""" + table(["Term", "Plain meaning"], [
+        ["Cost of goods available for sale", "beginning inventory + purchases: everything that could be sold"],
+        ["Ending inventory", "cost of the goods still unsold at period end (an asset)"],
+        ["Cost of goods sold (COGS)", "cost of the goods that were sold (an expense)"],
+        ["Gross profit", "net sales − cost of goods sold"],
+        ["Gross profit rate", "gross profit ÷ net sales, as a percentage"],
+        ["Net sales", "sales − sales returns"],
+        ["Purchase return", "goods sent back to the supplier: reduces purchases"],
+        ["Sales return", "goods a customer sends back: reduces sales, and the goods come back into inventory"],
+        ["Unit cost", "what one unit cost to buy"],
+        ["FOB", "\u201cfree on board\u201d: the point where ownership passes from seller to buyer"],
+        ["Consignment", "holding someone else\u2019s goods to sell for a fee, without owning them"],
+    ]) + """
+<div class="box say"><b>How an exam answer is built</b>1. Work out the units and cost available for sale.
+2. Work out how many units are left. 3. Cost those units by the method asked for. 4. Cost of goods available
+minus ending inventory gives cost of goods sold. 5. Net sales minus cost of goods sold gives gross profit.</div>
+"""
+
+
 def s_lo1():
     return """
 <h2><small>LO 1</small>Classifying and determining inventory</h2>
@@ -137,6 +202,20 @@ condition ready for sale. Unit costs are then applied to quantities using one of
     ]) + """
 <div class="box trap"><b>Remember this sentence</b>Cost flow assumptions <b>do not need to be consistent with the
 physical movement of the goods</b>. Only specific identification tracks actual units.</div>
+<div class="box deep"><b>The rules the slides state, in the words to quote</b>
+<ul>
+<li>Inventory is accounted for at <b>cost</b>; cost includes all expenditures necessary to acquire the goods and
+place them in a condition ready for sale.</li>
+<li>Goods in transit are included in the inventory of the company that has <b>legal title</b>; the terms of sale
+decide it.</li>
+<li>Cost flow assumptions <b>do not need to be consistent with the physical movement</b> of the goods.</li>
+<li>FIFO: the costs of the <b>earliest</b> goods purchased are the first recognised in cost of goods sold.</li>
+<li>LIFO: the costs of the <b>latest</b> goods purchased are the first recognised in cost of goods sold.</li>
+<li>Average-cost allocates the cost of goods available for sale on the basis of <b>weighted-average unit cost</b>.</li>
+<li>An error in ending inventory of the current period has a <b>reverse effect</b> on net income of the next
+period, and over the two years the total net income is correct.</li>
+<li>The LIFO conformity rule: LIFO for tax means LIFO for financial reporting.</li>
+</ul></div>
 <h3>Specific identification — the Crivitz example</h3>
 <p>Crivitz TV buys three identical 50-inch TVs for $700, $750 and $800, and sells two of them for $1,200 each.
 If the ones sold were the February 3 ($700) and May 22 ($800) sets, then cost of goods sold is
@@ -278,6 +357,22 @@ is computed as each sale happens. Same Houston Electronics data, but now the 550
         ["FIFO", "$6,200 <span class='t-s'>(100@10 + 200@11 + 250@12)</span>", "$5,800 <span class='t-s'>(50@12 + 400@13)</span>", "<b>Yes</b> — FIFO always gives the same answer either way"],
         ["LIFO", "$6,300 <span class='t-s'>(300@12 + 200@11 + 50@10)</span>", "$5,700 <span class='t-s'>(50@10 + 400@13)</span>", "No — periodic LIFO gave $7,000 / $5,000"],
         ["Moving-average", "$6,233", "$5,767", "No — periodic average gave $6,600 / $5,400"],
+    ]) + """
+<h3>FIFO, step by step</h3>
+""" + table(["Date", "Purchases", "Cost of goods sold", "Balance (units and cost)"], [
+        ["Jan. 1", "", "", "(100 @ $10) $1,000"],
+        ["Apr. 15", "(200 @ $11) $2,200", "", "(100 @ $10) (200 @ $11) $3,200"],
+        ["Aug. 24", "(300 @ $12) $3,600", "", "(100 @ $10) (200 @ $11) (300 @ $12) $6,800"],
+        ["Sept. 10", "", "(100 @ $10) + (200 @ $11) + (250 @ $12) = <b>$6,200</b>", "(50 @ $12) $600"],
+        ["Nov. 27", "(400 @ $13) $5,200", "", "(50 @ $12) (400 @ $13) <b>$5,800</b>"],
+    ]) + """
+<h3>LIFO, step by step</h3>
+""" + table(["Date", "Purchases", "Cost of goods sold", "Balance (units and cost)"], [
+        ["Jan. 1", "", "", "(100 @ $10) $1,000"],
+        ["Apr. 15", "(200 @ $11) $2,200", "", "(100 @ $10) (200 @ $11) $3,200"],
+        ["Aug. 24", "(300 @ $12) $3,600", "", "(100 @ $10) (200 @ $11) (300 @ $12) $6,800"],
+        ["Sept. 10", "", "(300 @ $12) + (200 @ $11) + (50 @ $10) = <b>$6,300</b>", "(50 @ $10) $500"],
+        ["Nov. 27", "(400 @ $13) $5,200", "", "(50 @ $10) (400 @ $13) <b>$5,700</b>"],
     ]) + """
 <h3>Moving-average, step by step</h3>
 <p>A new average unit cost is computed <b>after every purchase</b>, never after a sale.</p>
@@ -610,6 +705,7 @@ def s_quiz():
 def sections():
     return [
         ("start", "Start", s_start()),
+        ("basics", "From zero", s_basics()),
         ("lo1", "LO 1 Classify", s_lo1()),
         ("lo2", "LO 2 Cost flow", s_lo2()),
         ("errors", "LO 3 Errors", s_errors()),

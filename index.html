@@ -152,7 +152,7 @@ details.qa .a{padding:0 16px 12px 36px}
 <div id="progress"></div>
 <div class="top"><div class="row">
   <span class="brand">📦 FMA Ch. 6</span>
-  <nav class="nav" id="nav"><a href="#start">Start</a><a href="#lo1">LO 1 Classify</a><a href="#lo2">LO 2 Cost flow</a><a href="#errors">LO 3 Errors</a><a href="#presentation">LO 4 Presentation</a><a href="#perpetual">Appendix 6A</a><a href="#problems">Worked problems</a><a href="#qa">Q&amp;A</a><a href="#quiz">Quiz</a><a href="#checklist">Checklist</a></nav>
+  <nav class="nav" id="nav"><a href="#start">Start</a><a href="#basics">From zero</a><a href="#lo1">LO 1 Classify</a><a href="#lo2">LO 2 Cost flow</a><a href="#errors">LO 3 Errors</a><a href="#presentation">LO 4 Presentation</a><a href="#perpetual">Appendix 6A</a><a href="#problems">Worked problems</a><a href="#qa">Q&amp;A</a><a href="#quiz">Quiz</a><a href="#checklist">Checklist</a></nav>
   <button class="btn" id="theme" title="Toggle light / dark">Theme</button>
 </div></div>
 <main>
@@ -202,6 +202,42 @@ the total net income is correct again.</li>
   <div class="stat"><div class="v">2</div><div class="k">years an inventory error affects, and they cancel out</div></div>
   <div class="stat"><div class="v">30%</div><div class="k">tax rate in the comparative income statements</div></div>
 </div>
+</section><section id="basics">
+<h2><small>From zero</small>Inventory in plain English</h2>
+<p>Skip this if you already know the vocabulary. If you missed the classes, read it first: everything later
+depends on these five ideas.</p>
+<h3>1. What inventory is</h3>
+<p><b>Inventory is the goods a business is holding to sell.</b> A shop's shelves, a warehouse's boxes. It is an
+<b>asset</b> while it sits there. The moment it is sold, its cost stops being an asset and becomes an expense
+called <b>cost of goods sold</b>. That switch is the whole chapter.</p>
+<h3>2. Why the cost has to be split</h3>
+<p>During a month a shop starts with some goods, buys more, and sells some. Add the starting goods to the
+purchases and you get everything it could have sold: the <b>cost of goods available for sale</b>. At month end
+that pot is split in two.</p>
+<div class="figwrap"><svg viewBox="0 0 820 200" role="img" aria-label="splitting the pot"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--muted)"/></marker></defs><rect x="20" y="60" width="200" height="80" rx="10" class="bxw"/><text x="120.0" y="88" text-anchor="middle" class="t-b">Beginning inventory</text><text x="120.0" y="104" text-anchor="middle" class="t-s">what was on the shelf</text><text x="120.0" y="120" text-anchor="middle" class="t-s">at the start</text><rect x="20" y="150" width="200" height="40" rx="10" class="bxw"/><text x="120.0" y="174" text-anchor="middle" class="t-b">+ Purchases</text><path d="M225,110 L275,110" class="ar"/><rect x="280" y="70" width="230" height="80" rx="10" class="bxa"/><text x="395.0" y="98" text-anchor="middle" class="t-b">Cost of goods</text><text x="395.0" y="114" text-anchor="middle" class="t-s">available for sale</text><text x="395.0" y="130" text-anchor="middle" class="t-s">the whole pot</text><path d="M515,90 L565,55" class="ar"/><path d="M515,130 L565,165" class="ar"/><rect x="570" y="20" width="230" height="70" rx="10" class="bxg"/><text x="685.0" y="51" text-anchor="middle" class="t-b">Ending inventory</text><text x="685.0" y="67" text-anchor="middle" class="t-s">still on the shelf = ASSET</text><rect x="570" y="130" width="230" height="70" rx="10" class="bxv"/><text x="685.0" y="161" text-anchor="middle" class="t-b">Cost of goods sold</text><text x="685.0" y="177" text-anchor="middle" class="t-s">sold = EXPENSE</text></svg><div class="cap">Whatever you do not count as ending inventory is treated as sold. That is why the costing method changes profit.</div></div>
+<div class="formula">Beginning inventory + Purchases − Ending inventory = Cost of goods sold</div>
+<h3>3. The two record-keeping systems</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class=""></th><th class="">Perpetual system</th><th class="">Periodic system</th></tr></thead><tbody><tr class=""><td class="">When records update</td><td class="">at every purchase and every sale</td><td class="">only at the end of the period</td></tr><tr class=""><td class="">Cost of goods sold</td><td class="">calculated at each sale</td><td class="">calculated once, using the formula above</td></tr><tr class=""><td class="">Physical count is for</td><td class="">checking the records and finding losses (theft, waste)</td><td class="">finding out what is on hand at all</td></tr><tr class=""><td class="">Which problem is which</td><td class="">P6.8A (Dempsey)</td><td class="">P6.5A (Koetteritz)</td></tr></tbody></table></div>
+<h3>4. Why there are different costing methods</h3>
+<p>A shop buys identical goods at different prices through the year: 100 at $10, then 200 at $11, then 300 at
+$12. It sells some. <b>Which cost goes to the sold ones?</b> The goods are identical, so accounting has to
+<i>assume</i> an order:</p>
+<ul>
+<li><b>FIFO</b> — assume the oldest are sold first. Newest costs stay in inventory.</li>
+<li><b>LIFO</b> — assume the newest are sold first. Oldest costs stay in inventory.</li>
+<li><b>Average-cost</b> — mix all the costs together and use one average.</li>
+<li><b>Specific identification</b> — no assumption at all: track each actual unit. Only practical for things like
+cars, where every unit is identifiable.</li>
+</ul>
+<div class="box deep"><b>A 3-unit example you can hold in your head</b>Buy one item for $10, then one for $12. Sell
+one for $20. FIFO: cost of goods sold $10, inventory left $12, gross profit $10. LIFO: cost of goods sold $12,
+inventory left $10, gross profit $8. Average: cost $11 each, gross profit $9. Same shop, same sale, three
+different profits — all of them legal.</div>
+<h3>5. The words that will be used from here on</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Term</th><th class="">Plain meaning</th></tr></thead><tbody><tr class=""><td class="">Cost of goods available for sale</td><td class="">beginning inventory + purchases: everything that could be sold</td></tr><tr class=""><td class="">Ending inventory</td><td class="">cost of the goods still unsold at period end (an asset)</td></tr><tr class=""><td class="">Cost of goods sold (COGS)</td><td class="">cost of the goods that were sold (an expense)</td></tr><tr class=""><td class="">Gross profit</td><td class="">net sales − cost of goods sold</td></tr><tr class=""><td class="">Gross profit rate</td><td class="">gross profit ÷ net sales, as a percentage</td></tr><tr class=""><td class="">Net sales</td><td class="">sales − sales returns</td></tr><tr class=""><td class="">Purchase return</td><td class="">goods sent back to the supplier: reduces purchases</td></tr><tr class=""><td class="">Sales return</td><td class="">goods a customer sends back: reduces sales, and the goods come back into inventory</td></tr><tr class=""><td class="">Unit cost</td><td class="">what one unit cost to buy</td></tr><tr class=""><td class="">FOB</td><td class="">“free on board”: the point where ownership passes from seller to buyer</td></tr><tr class=""><td class="">Consignment</td><td class="">holding someone else’s goods to sell for a fee, without owning them</td></tr></tbody></table></div>
+<div class="box say"><b>How an exam answer is built</b>1. Work out the units and cost available for sale.
+2. Work out how many units are left. 3. Cost those units by the method asked for. 4. Cost of goods available
+minus ending inventory gives cost of goods sold. 5. Net sales minus cost of goods sold gives gross profit.</div>
 </section><section id="lo1">
 <h2><small>LO 1</small>Classifying and determining inventory</h2>
 <h3>Classification</h3>
@@ -230,6 +266,20 @@ condition ready for sale. Unit costs are then applied to quantities using one of
 <div class="tablewrap"><table class="sched"><thead><tr><th class="">Method</th><th class="">What it assumes</th><th class="">Note from the deck</th></tr></thead><tbody><tr class=""><td class="">Specific identification</td><td class="">each item sold is costed at its own actual cost</td><td class="">an actual physical-flow method; <b>practice is relatively rare</b></td></tr><tr class=""><td class="">FIFO (first-in, first-out)</td><td class="">earliest costs go to cost of goods sold</td><td class="">often parallels the actual physical flow of goods</td></tr><tr class=""><td class="">LIFO (last-in, first-out)</td><td class="">latest costs go to cost of goods sold</td><td class="">seldom matches physical flow — exceptions are goods stored in piles, like coal or hay</td></tr><tr class=""><td class="">Average-cost</td><td class="">one weighted-average unit cost for everything</td><td class="">allocates the cost of goods available for sale on a weighted-average basis</td></tr></tbody></table></div>
 <div class="box trap"><b>Remember this sentence</b>Cost flow assumptions <b>do not need to be consistent with the
 physical movement of the goods</b>. Only specific identification tracks actual units.</div>
+<div class="box deep"><b>The rules the slides state, in the words to quote</b>
+<ul>
+<li>Inventory is accounted for at <b>cost</b>; cost includes all expenditures necessary to acquire the goods and
+place them in a condition ready for sale.</li>
+<li>Goods in transit are included in the inventory of the company that has <b>legal title</b>; the terms of sale
+decide it.</li>
+<li>Cost flow assumptions <b>do not need to be consistent with the physical movement</b> of the goods.</li>
+<li>FIFO: the costs of the <b>earliest</b> goods purchased are the first recognised in cost of goods sold.</li>
+<li>LIFO: the costs of the <b>latest</b> goods purchased are the first recognised in cost of goods sold.</li>
+<li>Average-cost allocates the cost of goods available for sale on the basis of <b>weighted-average unit cost</b>.</li>
+<li>An error in ending inventory of the current period has a <b>reverse effect</b> on net income of the next
+period, and over the two years the total net income is correct.</li>
+<li>The LIFO conformity rule: LIFO for tax means LIFO for financial reporting.</li>
+</ul></div>
 <h3>Specific identification — the Crivitz example</h3>
 <p>Crivitz TV buys three identical 50-inch TVs for $700, $750 and $800, and sells two of them for $1,200 each.
 If the ones sold were the February 3 ($700) and May 22 ($800) sets, then cost of goods sold is
@@ -294,6 +344,10 @@ A higher turnover means inventory is sold faster and less cash is tied up.</div>
 is computed as each sale happens. Same Houston Electronics data, but now the 550-unit sale happens on September 10,
 <b>before</b> the November 27 purchase.</p>
 <div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Explanation</th><th class="n">Units</th><th class="n">Unit cost</th><th class="n">Total cost</th><th class="n">Balance in units</th></tr></thead><tbody><tr class=""><td class="">1/1</td><td class="">Beginning inventory</td><td class="n">100</td><td class="n">$10</td><td class="n">$1,000</td><td class="n">100</td></tr><tr class=""><td class="">4/15</td><td class="">Purchase</td><td class="n">200</td><td class="n">11</td><td class="n">2,200</td><td class="n">300</td></tr><tr class=""><td class="">8/24</td><td class="">Purchase</td><td class="n">300</td><td class="n">12</td><td class="n">3,600</td><td class="n">600</td></tr><tr class=""><td class="">9/10</td><td class=""><b>Sale</b></td><td class="n">550</td><td class="n"></td><td class="n"></td><td class="n">50</td></tr><tr class=""><td class="">11/27</td><td class="">Purchase</td><td class="n">400</td><td class="n">13</td><td class="n">5,200</td><td class="n">450</td></tr><tr class="tot"><td class=""></td><td class=""></td><td class="n"></td><td class="n"></td><td class="n"><b>$12,000</b></td><td class="n"></td></tr></tbody></table></div><div class="tablewrap"><table class="sched"><thead><tr><th class="">Method</th><th class="">Cost of goods sold</th><th class="">Ending inventory</th><th class="">Same as periodic?</th></tr></thead><tbody><tr class=""><td class="">FIFO</td><td class="">$6,200 <span class='t-s'>(100@10 + 200@11 + 250@12)</span></td><td class="">$5,800 <span class='t-s'>(50@12 + 400@13)</span></td><td class=""><b>Yes</b> — FIFO always gives the same answer either way</td></tr><tr class=""><td class="">LIFO</td><td class="">$6,300 <span class='t-s'>(300@12 + 200@11 + 50@10)</span></td><td class="">$5,700 <span class='t-s'>(50@10 + 400@13)</span></td><td class="">No — periodic LIFO gave $7,000 / $5,000</td></tr><tr class=""><td class="">Moving-average</td><td class="">$6,233</td><td class="">$5,767</td><td class="">No — periodic average gave $6,600 / $5,400</td></tr></tbody></table></div>
+<h3>FIFO, step by step</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $10) $1,000</td></tr><tr class=""><td class="">Apr. 15</td><td class="">(200 @ $11) $2,200</td><td class=""></td><td class="">(100 @ $10) (200 @ $11) $3,200</td></tr><tr class=""><td class="">Aug. 24</td><td class="">(300 @ $12) $3,600</td><td class=""></td><td class="">(100 @ $10) (200 @ $11) (300 @ $12) $6,800</td></tr><tr class=""><td class="">Sept. 10</td><td class=""></td><td class="">(100 @ $10) + (200 @ $11) + (250 @ $12) = <b>$6,200</b></td><td class="">(50 @ $12) $600</td></tr><tr class=""><td class="">Nov. 27</td><td class="">(400 @ $13) $5,200</td><td class=""></td><td class="">(50 @ $12) (400 @ $13) <b>$5,800</b></td></tr></tbody></table></div>
+<h3>LIFO, step by step</h3>
+<div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $10) $1,000</td></tr><tr class=""><td class="">Apr. 15</td><td class="">(200 @ $11) $2,200</td><td class=""></td><td class="">(100 @ $10) (200 @ $11) $3,200</td></tr><tr class=""><td class="">Aug. 24</td><td class="">(300 @ $12) $3,600</td><td class=""></td><td class="">(100 @ $10) (200 @ $11) (300 @ $12) $6,800</td></tr><tr class=""><td class="">Sept. 10</td><td class=""></td><td class="">(300 @ $12) + (200 @ $11) + (50 @ $10) = <b>$6,300</b></td><td class="">(50 @ $10) $500</td></tr><tr class=""><td class="">Nov. 27</td><td class="">(400 @ $13) $5,200</td><td class=""></td><td class="">(50 @ $10) (400 @ $13) <b>$5,700</b></td></tr></tbody></table></div>
 <h3>Moving-average, step by step</h3>
 <p>A new average unit cost is computed <b>after every purchase</b>, never after a sale.</p>
 <div class="tablewrap"><table class="sched"><thead><tr><th class="">Date</th><th class="">Purchases</th><th class="">Cost of goods sold</th><th class="">Balance (units and cost)</th></tr></thead><tbody><tr class=""><td class="">Jan. 1</td><td class=""></td><td class=""></td><td class="">(100 @ $10) $1,000</td></tr><tr class=""><td class="">Apr. 15</td><td class="">(200 @ $11) $2,200</td><td class=""></td><td class="">(300 @ $10.667) $3,200</td></tr><tr class=""><td class="">Aug. 24</td><td class="">(300 @ $12) $3,600</td><td class=""></td><td class="">(600 @ $11.333) $6,800</td></tr><tr class=""><td class="">Sept. 10</td><td class=""></td><td class="">(550 @ $11.333) <b>$6,233</b></td><td class="">(50 @ $11.333) $567</td></tr><tr class=""><td class="">Nov. 27</td><td class="">(400 @ $13) $5,200</td><td class=""></td><td class="">(450 @ $12.816) <b>$5,767</b></td></tr></tbody></table></div>
