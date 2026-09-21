@@ -9,7 +9,7 @@ table = None  # injected by build.py
 
 HERO = """
 <header class="hero">
-  <h1>FMA Chapter 6 — Inventories</h1>
+  <h1>FMA Chapter 6: Inventories</h1>
   <p>Rules on one screen, every slide example solved, both assignment problems worked.</p>
   <div class="chips">
     <span class="chip">Rules cheat sheet</span>
@@ -90,14 +90,14 @@ Net sales − Cost of goods sold = Gross profit &nbsp;·&nbsp; Gross profit ÷ N
 
 def s_ex_own():
     return """
-<h2><small>Slide example 1</small>Hasbeen Company — what to count</h2>
+<h2><small>Slide example 1</small>Hasbeen Company: what to count</h2>
 <p><b>DO IT! LO 1.</b> Count $200,000. (1) It included $15,000 of goods held on
 consignment for Falls Co. (2) It left out $10,000 of purchased goods in transit, FOB shipping point. (3) It left
 out goods it had sold, costing $12,000, in transit FOB shipping point.</p>
 """ + table(["Item", "Rule", "Action"], [
         ["1. Consigned goods $15,000", "consignee never owns them", "<b>deduct 15,000</b>"],
         ["2. Purchases in transit $10,000, FOB shipping point", "title passed to Hasbeen when the carrier took them", "<b>add 10,000</b>"],
-        ["3. Sales in transit $12,000, FOB shipping point", "title already passed to the customer", "<b>no change</b> — correctly excluded"],
+        ["3. Sales in transit $12,000, FOB shipping point", "title already passed to the customer", "<b>no change</b> (correctly excluded)"],
     ]) + """
 <div class="formula">$200,000 − $15,000 + $10,000 = <b>$195,000</b></div>
 """
@@ -105,20 +105,20 @@ out goods it had sold, costing $12,000, in transit FOB shipping point.</p>
 
 def s_ex_spec():
     return """
-<h2><small>Slide example 2</small>Crivitz TV — specific identification</h2>
-<p>Three identical TVs at $700 (Feb 3), $750 (Mar 5), $800 (May 22); two sold at $1,200 each — the Feb 3 and May 22 sets.</p>
+<h2><small>Slide example 2</small>Crivitz TV: specific identification</h2>
+<p>Three identical TVs at $700 (Feb 3), $750 (Mar 5), $800 (May 22). Two sold at $1,200 each: the Feb 3 and May 22 sets.</p>
 """ + table(["", "Working", "Answer"], [
         ["Cost of goods sold", "$700 + $800", "<b>$1,500</b>"],
         ["Ending inventory", "the March 5 set", "<b>$750</b>"],
         ["Gross profit", "(2 × $1,200) − $1,500", "<b>$900</b>"],
     ]) + """
-<div class="box trap"><b>Point</b>Choose different sets and profit changes, so this method suits identifiable units only.</div>
+<div class="box trap"><b>Why it matters</b>Choose the other two sets and the profit changes, so this method fits identifiable units only.</div>
 """
 
 
 def s_ex_periodic():
     return """
-<h2><small>Slide example 3</small>Houston Electronics — periodic FIFO, LIFO, average</h2>
+<h2><small>Slide example 3</small>Houston Electronics: periodic FIFO, LIFO, average</h2>
 """ + table(["Date", "Explanation", "Units", "Unit cost", "Total cost"], [
         ["Jan. 1", "Beginning inventory", "100", "$10", "$1,000"],
         ["Apr. 15", "Purchase", "200", "11", "2,200"],
@@ -128,13 +128,13 @@ def s_ex_periodic():
         ["", "Units sold", "550", "", ""],
         ["", "Ending inventory", "450", "", ""],
     ], num=(2, 3, 4)) + """
-<h3>FIFO — newest costs stay</h3>
+<h3>FIFO: newest costs stay</h3>
 """ + table(["Ending inventory", "", "Cost of goods sold", ""], [
         ["400 @ $13", "$5,200", "Available for sale", "$12,000"],
         ["50 @ $12", "600", "Less ending inventory", "5,800"],
         (["<b>Total</b>", "<b>$5,800</b>", "<b>Cost of goods sold</b>", "<b>$6,200</b>"], "tot"),
     ], num=(1, 3)) + """
-<h3>LIFO — oldest costs stay</h3>
+<h3>LIFO: oldest costs stay</h3>
 """ + table(["Ending inventory", "", "Cost of goods sold", ""], [
         ["100 @ $10", "$1,000", "Available for sale", "$12,000"],
         ["200 @ $11", "2,200", "Less ending inventory", "5,000"],
@@ -153,7 +153,7 @@ def s_ex_periodic():
 
 def s_ex_effects():
     return """
-<h2><small>Slide example 4</small>Houston Electronics — the three income statements</h2>
+<h2><small>Slide example 4</small>Houston Electronics: the three income statements</h2>
 <p>Same data, tax rate 30%. Learn the shape: only ending inventory changes, and everything below it follows.</p>
 """ + table(["", "FIFO", "LIFO", "Average"], [
         ["Sales revenue", "$18,500", "$18,500", "$18,500"],
@@ -168,13 +168,13 @@ def s_ex_effects():
         ["Income tax expense (30%)", "990", "750", "870"],
         (["<b>Net income</b>", "<b>$2,310</b>", "<b>$1,750</b>", "<b>$2,030</b>"], "tot"),
     ], num=(1, 2, 3)) + """
-<p><b>Comment line:</b> rising prices → FIFO highest net income and ending inventory near current cost; LIFO lowest net income, lowest tax, ending inventory understated.</p>
+<p><b>If asked to comment:</b> with rising prices FIFO gives the highest net income and an ending inventory near current cost, LIFO the lowest net income and the lowest tax, with ending inventory understated.</p>
 """
 
 
 def s_ex_error():
     return """
-<h2><small>Slide example 5</small>Visual Company — an inventory error</h2>
+<h2><small>Slide example 5</small>Visual Company: an inventory error</h2>
 <p><b>DO IT! LO 3.</b> 2016 ending inventory overstated by $22,000.</p>
 """ + table(["", "2016", "2017"], [
         ["Ending inventory", "<b>$22,000 overstated</b>", "no effect"],
@@ -187,7 +187,7 @@ def s_ex_error():
 
 def s_ex_perpetual():
     return """
-<h2><small>Slide example 6</small>Appendix 6A — the same data, perpetual</h2>
+<h2><small>Slide example 6</small>Appendix 6A: the same data, perpetual</h2>
 <p>Sale of 550 now falls on 9/10, <b>before</b> the 11/27 purchase, so each sale uses only the layers on hand then.</p>
 """ + table(["Date", "Explanation", "Units", "Unit cost", "Balance in units"], [
         ["1/1", "Beginning inventory", "100", "$10", "100"],
@@ -237,7 +237,7 @@ def s_slide_mcq():
 def s_problems():
     return """
 <h2><small>Assignment</small>P6.5A and P6.8A, solved</h2>
-<h3>P6.5A — Koetteritz Inc., June 2020 (periodic)</h3>
+<h3>P6.5A: Koetteritz Inc., June 2020 (periodic)</h3>
 """ + table(["Item", "Units", "Cost"], [
         ["Beginning inventory 40 @ $40", "40", "$1,600"],
         ["Purchase 135 @ $43", "135", "5,805"],
@@ -256,7 +256,7 @@ def s_problems():
         ["<b>(iii) Gross profit</b>", "$4,330", "$4,830", "$4,546.90"],
         (["<b>(iv) Gross profit rate</b>", "<b>37.4%</b>", "<b>41.7%</b>", "<b>39.2%</b>"], "tot"),
     ], num=(1, 2, 3)) + """
-<h3>P6.8A — Dempsey Inc., January 2020 (perpetual)</h3>
+<h3>P6.8A: Dempsey Inc., January 2020 (perpetual)</h3>
 <p>Available 310 units / $5,460 · units sold 190 · ending inventory 120 units ·
 net sales = (110 × $28) − (10 × $28) + (90 × $32) = <b>$5,680</b></p>
 <h4>LIFO</h4>
